@@ -1,2 +1,2 @@
 # PDF-Stamper-Binder
-PDF Stamper &amp; binder utility with dinamic html based stamp  
+PDF Stamper &amp; Binder utility with dynamic html based stamp
