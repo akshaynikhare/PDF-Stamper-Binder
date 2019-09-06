@@ -1,0 +1,6 @@
+﻿PDF-Stamper-Binder changelog
+===================
+
+Version 1.0
+-----------
+  * First public release.
