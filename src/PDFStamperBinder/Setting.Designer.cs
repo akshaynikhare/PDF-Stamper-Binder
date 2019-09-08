@@ -53,12 +53,15 @@
             this.h = new System.Windows.Forms.NumericUpDown();
             this.x = new System.Windows.Forms.NumericUpDown();
             this.y = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.a = new System.Windows.Forms.Label();
             this.plane.SuspendLayout();
             this.paper.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.w)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.h)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.x)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.y)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // SettingList
@@ -96,7 +99,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(322, 18);
+            this.label6.Location = new System.Drawing.Point(281, 18);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(13, 13);
             this.label6.TabIndex = 16;
@@ -105,7 +108,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(263, 18);
+            this.label8.Location = new System.Drawing.Point(222, 18);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(18, 13);
             this.label8.TabIndex = 15;
@@ -114,7 +117,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(378, 18);
+            this.label2.Location = new System.Drawing.Point(337, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(14, 13);
             this.label2.TabIndex = 15;
@@ -123,7 +126,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(433, 18);
+            this.label1.Location = new System.Drawing.Point(392, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(14, 13);
             this.label1.TabIndex = 16;
@@ -136,7 +139,7 @@
             "top-right",
             "bottom-left",
             "bottom-right"});
-            this.anchor.Location = new System.Drawing.Point(543, 15);
+            this.anchor.Location = new System.Drawing.Point(580, 16);
             this.anchor.Name = "anchor";
             this.anchor.Size = new System.Drawing.Size(70, 21);
             this.anchor.TabIndex = 0;
@@ -144,7 +147,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(496, 18);
+            this.label3.Location = new System.Drawing.Point(533, 19);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 21;
@@ -172,7 +175,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(743, 13);
+            this.button2.Location = new System.Drawing.Point(796, 19);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(95, 22);
             this.button2.TabIndex = 28;
@@ -263,7 +266,7 @@
             // 
             // w
             // 
-            this.w.Location = new System.Drawing.Point(278, 15);
+            this.w.Location = new System.Drawing.Point(237, 15);
             this.w.Maximum = new decimal(new int[] {
             5000,
             0,
@@ -276,7 +279,7 @@
             // 
             // h
             // 
-            this.h.Location = new System.Drawing.Point(334, 15);
+            this.h.Location = new System.Drawing.Point(293, 15);
             this.h.Maximum = new decimal(new int[] {
             5000,
             0,
@@ -289,7 +292,7 @@
             // 
             // x
             // 
-            this.x.Location = new System.Drawing.Point(389, 14);
+            this.x.Location = new System.Drawing.Point(348, 14);
             this.x.Maximum = new decimal(new int[] {
             5000,
             0,
@@ -302,7 +305,7 @@
             // 
             // y
             // 
-            this.y.Location = new System.Drawing.Point(452, 14);
+            this.y.Location = new System.Drawing.Point(411, 14);
             this.y.Maximum = new decimal(new int[] {
             5000,
             0,
@@ -313,11 +316,34 @@
             this.y.TabIndex = 36;
             this.y.ValueChanged += new System.EventHandler(this.pos_ValueChanged);
             // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(477, 14);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(38, 20);
+            this.numericUpDown1.TabIndex = 40;
+            // 
+            // a
+            // 
+            this.a.AutoSize = true;
+            this.a.Location = new System.Drawing.Point(458, 18);
+            this.a.Name = "a";
+            this.a.Size = new System.Drawing.Size(14, 13);
+            this.a.TabIndex = 38;
+            this.a.Text = "A";
+            // 
             // Setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1055, 641);
+            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.a);
             this.Controls.Add(this.y);
             this.Controls.Add(this.x);
             this.Controls.Add(this.h);
@@ -350,6 +376,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.h)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.x)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.y)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -380,5 +407,7 @@
         private System.Windows.Forms.NumericUpDown x;
         private System.Windows.Forms.NumericUpDown y;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label a;
     }
 }

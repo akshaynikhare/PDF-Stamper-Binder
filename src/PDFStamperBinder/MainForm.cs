@@ -208,6 +208,10 @@ namespace PDFStamperBinder
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+
+            Stamper smp = new Stamper();
+            smp.PdfStamp_V2();
+
             if (!Directory.Exists("stamp_Setting"))
             {
                 Directory.CreateDirectory("stamp_Setting");
@@ -225,7 +229,7 @@ namespace PDFStamperBinder
         }
 
         private void StampButton_Click(object sender, EventArgs e)
-        {
+        {/*
             if(config.SelectedIndex >= 0) { 
                 
                     progressBar.Visible = true;
@@ -248,6 +252,16 @@ namespace PDFStamperBinder
             {
                 MessageBox.Show("Select setting");
             }
+            */
+
+        }
+
+        private void ToolStripButton1_Click(object sender, EventArgs e)
+        {
+
+            Stamper smp = new Stamper();
+            smp.PdfStamp_V2();
+
 
         }
     }

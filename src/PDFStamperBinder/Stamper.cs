@@ -1,19 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using iTextSharp.text;
-using iTextSharp.text.html.simpleparser;
-using iTextSharp.text.pdf;
+
+using iText.IO.Image;
+using iText.Kernel.Pdf;
+using iText.Kernel.Pdf.Canvas;
+using iText.Kernel.Pdf.Extgstate;
 
 namespace PDFStamperBinder
 {
 
     class Stamper 
-    {
+    {/*
         private static string lastimagepath = null;
         private static string stampname = null;
         private static int w = 100, h = 100, x = 100, y = 100;
@@ -110,6 +110,52 @@ namespace PDFStamperBinder
        }
 
 
+       
+
+
+
+
+
+
+
+        */
+        internal void PdfStamp_V2()
+        {
+
+
+            /*
+            PdfDocument pdf = new PdfDocument(new PdfReader("asd.pdf"), new PdfWriter("asd_f.pdf"));
+
+           // MessageBox.Show(pdf.GetNumberOfPages().ToString());
+            for (var i = 0; i < pdf.GetNumberOfPages(); i++)
+            {
+                PdfCanvas canvas = new PdfCanvas(pdf.GetPage(i+1));
+                ImageData image = ImageDataFactory.Create(System.IO.Directory.GetCurrentDirectory() + "\\img_2.jpg");
+                canvas.SaveState();
+                //MessageBox.Show(image.GetWidth().ToString());
+                PdfExtGState state = new PdfExtGState();
+                state.SetFillOpacity(0.6f);
+                canvas.SetExtGState(state);
+                canvas.AddImage(image, 100, 0, false);
+                canvas.RestoreState();
+            }
+
+            pdf.Close();
+
+          */
+
+
+            string stampname = System.IO.Directory.GetCurrentDirectory() + "\\" + RandomString(10) + ".jpg";
+         
+            string k =System.IO.File.ReadAllText("h.html");
+            html2png tt = new html2png();
+            tt.genrate(k, stampname);
+            while (tt.running) { System.Threading.Thread.Sleep(10); }
+
+            System.Diagnostics.Process.Start(stampname);
+        }
+
+
         private static Random random = new Random();
         public static string RandomString(int length)
         {
@@ -123,38 +169,22 @@ namespace PDFStamperBinder
 
 
 
-        private static void StartBrowser(string source, int w, int h,int x,int y)
-        {
-            var th = new Thread(() =>
-            {
-                var webBrowser = new WebBrowser();
-                webBrowser.ScrollBarsEnabled = false;
-                //MessageBox.Show("wb=> " + webBrowser.Height.ToString() + "\n img ht=>" + h);
-                webBrowser.Height = h;
-                //webBrowser.Width = w;
-                webBrowser.DocumentCompleted += webBrowser_DocumentCompleted;
-                webBrowser.DocumentText = source;
-                //MessageBox.Show(source);
-                Application.Run();
-            });
-            th.SetApartmentState(ApartmentState.STA);
-            th.Start();
-           
 
-        }
 
-        static void webBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
-        {
-            var webBrowser = (WebBrowser)sender;
-            using (Bitmap bitmap =  new Bitmap(webBrowser.Width,  webBrowser.Height))
-            {
-                webBrowser.DrawToBitmap(  bitmap, new System.Drawing .Rectangle(0, 0, bitmap.Width, bitmap.Height));
-                bitmap.Save(lastimagepath, System.Drawing.Imaging.ImageFormat.Jpeg);
-                //MessageBox.Show("asd > " + lastimagepath + " < asd");
-                //System.Diagnostics.Process.Start(lastimagepath);
-               
-            }
-        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
 }
