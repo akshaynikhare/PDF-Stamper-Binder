@@ -148,9 +148,10 @@ namespace PDFStamperBinder
             string stampname = System.IO.Directory.GetCurrentDirectory() + "\\" + RandomString(10) + ".jpg";
          
             string k =System.IO.File.ReadAllText("h.html");
-            html2png tt = new html2png();
-            tt.genrate(k, stampname);
-            while (tt.running) { System.Threading.Thread.Sleep(10); }
+            html2png tt = new html2png(k);
+            tt.genrate(stampname,200);
+            tt.close();
+            
 
             System.Diagnostics.Process.Start(stampname);
         }
