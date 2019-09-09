@@ -53,12 +53,18 @@
             this.h = new System.Windows.Forms.NumericUpDown();
             this.x = new System.Windows.Forms.NumericUpDown();
             this.y = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.angle = new System.Windows.Forms.Label();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.transprancy = new System.Windows.Forms.Label();
             this.plane.SuspendLayout();
             this.paper.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.w)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.h)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.x)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.y)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.SuspendLayout();
             // 
             // SettingList
@@ -96,7 +102,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(322, 18);
+            this.label6.Location = new System.Drawing.Point(269, 18);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(13, 13);
             this.label6.TabIndex = 16;
@@ -105,7 +111,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(263, 18);
+            this.label8.Location = new System.Drawing.Point(210, 18);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(18, 13);
             this.label8.TabIndex = 15;
@@ -114,7 +120,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(378, 18);
+            this.label2.Location = new System.Drawing.Point(325, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(14, 13);
             this.label2.TabIndex = 15;
@@ -123,7 +129,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(433, 18);
+            this.label1.Location = new System.Drawing.Point(380, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(14, 13);
             this.label1.TabIndex = 16;
@@ -136,7 +142,7 @@
             "top-right",
             "bottom-left",
             "bottom-right"});
-            this.anchor.Location = new System.Drawing.Point(543, 15);
+            this.anchor.Location = new System.Drawing.Point(580, 12);
             this.anchor.Name = "anchor";
             this.anchor.Size = new System.Drawing.Size(70, 21);
             this.anchor.TabIndex = 0;
@@ -144,7 +150,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(496, 18);
+            this.label3.Location = new System.Drawing.Point(533, 15);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 21;
@@ -153,20 +159,20 @@
             // webBrowser1
             // 
             this.webBrowser1.IsWebBrowserContextMenuEnabled = false;
-            this.webBrowser1.Location = new System.Drawing.Point(210, 346);
+            this.webBrowser1.Location = new System.Drawing.Point(210, 367);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.ScrollBarsEnabled = false;
-            this.webBrowser1.Size = new System.Drawing.Size(834, 283);
+            this.webBrowser1.Size = new System.Drawing.Size(833, 262);
             this.webBrowser1.TabIndex = 25;
             // 
             // html
             // 
-            this.html.Location = new System.Drawing.Point(210, 40);
+            this.html.Location = new System.Drawing.Point(210, 67);
             this.html.Multiline = true;
             this.html.Name = "html";
             this.html.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.html.Size = new System.Drawing.Size(527, 300);
+            this.html.Size = new System.Drawing.Size(527, 294);
             this.html.TabIndex = 26;
             this.html.TextChanged += new System.EventHandler(this.Html_TextChanged);
             // 
@@ -196,9 +202,9 @@
             this.plane.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.plane.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.plane.Controls.Add(this.paper);
-            this.plane.Location = new System.Drawing.Point(743, 40);
+            this.plane.Location = new System.Drawing.Point(743, 67);
             this.plane.Name = "plane";
-            this.plane.Size = new System.Drawing.Size(300, 300);
+            this.plane.Size = new System.Drawing.Size(300, 294);
             this.plane.TabIndex = 29;
             // 
             // paper
@@ -263,7 +269,7 @@
             // 
             // w
             // 
-            this.w.Location = new System.Drawing.Point(278, 15);
+            this.w.Location = new System.Drawing.Point(225, 15);
             this.w.Maximum = new decimal(new int[] {
             5000,
             0,
@@ -276,7 +282,7 @@
             // 
             // h
             // 
-            this.h.Location = new System.Drawing.Point(334, 15);
+            this.h.Location = new System.Drawing.Point(281, 15);
             this.h.Maximum = new decimal(new int[] {
             5000,
             0,
@@ -289,7 +295,7 @@
             // 
             // x
             // 
-            this.x.Location = new System.Drawing.Point(389, 14);
+            this.x.Location = new System.Drawing.Point(336, 14);
             this.x.Maximum = new decimal(new int[] {
             5000,
             0,
@@ -302,7 +308,7 @@
             // 
             // y
             // 
-            this.y.Location = new System.Drawing.Point(452, 14);
+            this.y.Location = new System.Drawing.Point(399, 14);
             this.y.Maximum = new decimal(new int[] {
             5000,
             0,
@@ -313,11 +319,57 @@
             this.y.TabIndex = 36;
             this.y.ValueChanged += new System.EventHandler(this.pos_ValueChanged);
             // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(262, 45);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(77, 20);
+            this.numericUpDown1.TabIndex = 38;
+            // 
+            // angle
+            // 
+            this.angle.AutoSize = true;
+            this.angle.Location = new System.Drawing.Point(222, 47);
+            this.angle.Name = "angle";
+            this.angle.Size = new System.Drawing.Size(34, 13);
+            this.angle.TabIndex = 37;
+            this.angle.Text = "Angle";
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(427, 45);
+            this.numericUpDown2.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(77, 20);
+            this.numericUpDown2.TabIndex = 40;
+            // 
+            // transprancy
+            // 
+            this.transprancy.AutoSize = true;
+            this.transprancy.Location = new System.Drawing.Point(359, 47);
+            this.transprancy.Name = "transprancy";
+            this.transprancy.Size = new System.Drawing.Size(62, 13);
+            this.transprancy.TabIndex = 39;
+            this.transprancy.Text = "transprancy";
+            // 
             // Setting
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1055, 641);
+            this.Controls.Add(this.numericUpDown2);
+            this.Controls.Add(this.transprancy);
+            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.angle);
             this.Controls.Add(this.y);
             this.Controls.Add(this.x);
             this.Controls.Add(this.h);
@@ -350,6 +402,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.h)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.x)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.y)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -380,5 +434,9 @@
         private System.Windows.Forms.NumericUpDown x;
         private System.Windows.Forms.NumericUpDown y;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label angle;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.Label transprancy;
     }
 }

@@ -92,7 +92,6 @@ namespace PDFStamperBinder
         private void combineButton_Click(object sender, EventArgs e)
         {
 
-            /*
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 
@@ -113,9 +112,8 @@ namespace PDFStamperBinder
                 }
 
                 System.Diagnostics.Process.Start(saveFileDialog.FileName);
-               
             }
-             */
+             
         }
 
         private void addFileButton_Click(object sender, EventArgs e)
@@ -196,12 +194,70 @@ namespace PDFStamperBinder
             //config.SelectedItem = 0;
         }
 
-        private void Complete_StampButton_Click(object sender, EventArgs e)
+
+        private void StampButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("not programed");
+            if (config.SelectedIndex >= 0)
+            {
+
+                progressBar.Visible = true;
+                this.Enabled = false;
+                               
+                string stampname = genrateStampImage();
+
+              
+
+                for (int i = 0; i < inputListBox.Items.Count; i++)
+                {
+                    if(File.Exists(stampname))
+                    { 
+                            if (File.Exists((string)inputListBox.Items[i])) { 
+                            string outpath = Path.GetDirectoryName((string)inputListBox.Items[i]) + "\\";
+                            outpath += Path.GetFileNameWithoutExtension((string)inputListBox.Items[i]) + "_stamped";
+                            outpath += Path.GetExtension((string)inputListBox.Items[i]);
+                            Stamper smp = new Stamper();
+                            smp.PdfStamp(outpath, stampname, (string)inputListBox.Items[i]);
+                            System.Diagnostics.Process.Start(outpath);
+                            progressBar.Value = (int)(((i + 1) / (double)inputListBox.Items.Count) * 100);
+                            }
+                            else
+                            {
+                                MessageBox.Show("file :"+ (string)inputListBox.Items[i]+" \n Does not exist ! skipping file ...", "Error");
+                            }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error with the stamp file input & genration.", "Error");
+                    }
+                }
+
+
+                this.Enabled = true;
+                progressBar.Visible = false;
+                File.Delete(stampname);
+            }
+            else
+            {
+                MessageBox.Show("Select setting");
+            }
+
         }
 
+        private string genrateStampImage()
+        {
+            string stampname = tempDir + RandomString(10) + ".png";
+            string k = System.IO.File.ReadAllText(SettingFolder + "\\" + config.SelectedItem.ToString() + fileext);
 
+            html2image tt = new html2image(k, System.IO.Directory.GetCurrentDirectory() + "\\" + SettingFolder);
+
+            int sc = k.IndexOf("$-->");
+            string[] sl = k.Substring(5, sc - 5).Split(',');
+            tt.transprencyKey(System.Drawing.Color.White);
+            tt.Generate(stampname, Convert.ToInt32(sl[0]), Convert.ToInt32(sl[1]));
+            tt.close();
+
+            return stampname;
+        }
 
         private void Config_Click(object sender, EventArgs e)
         {
@@ -214,6 +270,12 @@ namespace PDFStamperBinder
             {
                 Directory.CreateDirectory("stamp_Setting");
             }
+
+            if (!Directory.Exists(tempDir))
+            {
+                Directory.CreateDirectory(tempDir);
+            }
+
             config.Items.Clear();
 
             foreach (string file in Directory.EnumerateFiles(SettingFolder, "*" + fileext))
@@ -227,6 +289,8 @@ namespace PDFStamperBinder
         }
 
         private static Random random = new Random();
+        private string tempDir = System.IO.Directory.GetCurrentDirectory() + "\\temp\\";
+
         public static string RandomString(int length)
         {
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -237,47 +301,65 @@ namespace PDFStamperBinder
 
 
 
-        private void StampButton_Click(object sender, EventArgs e)
+       
+
+        private void ToolStripButton1_Click(object sender, EventArgs e)
         {
-            if(config.SelectedIndex >= 0) { 
+            var bb = new About();
+            bb.Show();
+        }
+
+        private void StampAndBindButton_Click(object sender, EventArgs e)
+        {
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+
+                string stampname = genrateStampImage();
+                string pdfname = tempDir+ RandomString(10) + ".pdf";
                 
+
+
+                using (var combiner = new Combiner(pdfname))
+                {
                     progressBar.Visible = true;
                     this.Enabled = false;
+
                     for (int i = 0; i < inputListBox.Items.Count; i++)
                     {
-
-                    string stampname = System.IO.Directory.GetCurrentDirectory() + "\\temp\\" +RandomString(10) +".png";
-                    string k = System.IO.File.ReadAllText(SettingFolder + "\\" + config.SelectedItem.ToString() + fileext);
-
-                    html2image tt = new html2image(k, System.IO.Directory.GetCurrentDirectory() + "\\"+ SettingFolder );
-
-                    int sc = k.IndexOf("$-->");
-                    string[] sl = k.Substring(5, sc - 5).Split(',');
-                    tt.transprencyKey(System.Drawing.Color.White);
-                    tt.Generate(stampname, Convert.ToInt32(sl[0]), Convert.ToInt32(sl[1]));
-                    tt.close();
-                                       
-                    //System.Diagnostics.Process.Start(stampname);
-                    
-                    string outpath = Path.GetDirectoryName((string)inputListBox.Items[i]) + "\\";
-                    outpath += Path.GetFileNameWithoutExtension((string)inputListBox.Items[i]) + "_stamped";
-                    outpath += Path.GetExtension((string)inputListBox.Items[i]) ;
-                    Stamper smp = new Stamper();
-                    smp.PdfStamp(outpath, stampname, (string)inputListBox.Items[i]);
-                    System.Diagnostics.Process.Start(outpath);
-                    progressBar.Value = (int)(((i + 1) / (double)inputListBox.Items.Count) * 100);
-
+                        combiner.AddFiletoBind((string)inputListBox.Items[i]);
+                        progressBar.Value = (int)(((i + 1) / (double)inputListBox.Items.Count) * 90);
                     }
 
 
                     this.Enabled = true;
                     progressBar.Visible = false;
-            }
-            else
-            {
-                MessageBox.Show("Select setting");
-            }
+                }
+                
 
+
+
+                if (File.Exists(stampname))
+                {
+                    if (File.Exists(pdfname))
+                    {
+                        Stamper smp = new Stamper();
+                        smp.PdfStamp(saveFileDialog.FileName, stampname, pdfname);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Binded file \n Does not exist ! skipping file ... \n no file genrated", "Error");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Error with the stamp file input & genration.", "Error");
+                }
+                                
+                System.Diagnostics.Process.Start(saveFileDialog.FileName);
+                File.Delete(stampname);
+                File.Delete(pdfname);
+            }
         }
     }
 }

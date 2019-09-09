@@ -30,41 +30,20 @@ namespace PDFStamperBinder
     
     class Combiner : IDisposable
     {
-        //private readonly Document _document;
+        private readonly PdfDocument pdfDoc;
        // private readonly PdfCopy _pdfCopy;
 
         public Combiner(string outputFilePath)
         {
-            //var outputStream = File.Create(outputFilePath);
 
-          //  _document = new Document();
-          //  _pdfCopy = new PdfCopy(_document, outputStream);
-           // _document.Open();
-        }
-/*
-        public void AddFiletoBind(string fileName)
-        {
-            var reader = new PdfReader(fileName);
-
-            for (var i = 1; i <= reader.NumberOfPages; i++)
-            {
-                var size = reader.GetPageSizeWithRotation(i);
-                _document.SetPageSize(size);
-                _document.NewPage();
-
-                var page = _pdfCopy.GetImportedPage(reader, i);
-                _pdfCopy.AddPage(page);
-            }
-
-            reader.Close();
+            this.pdfDoc = new PdfDocument(new PdfWriter(outputFilePath).SetSmartMode(true));
+           
         }
 
-    */
-        
 
         public void Dispose()
         {
-            //_document.Close();
+            pdfDoc.Close();
         }
 
         public static SourceTestResult TestSourceFile(string fileName)
@@ -85,6 +64,14 @@ namespace PDFStamperBinder
         public enum SourceTestResult
         {
             Ok, Unreadable, Protected
+        }
+
+        internal void AddFiletoBind(string fileName)
+        {
+           
+            PdfDocument srcDoc = new PdfDocument(new PdfReader(fileName));
+            srcDoc.CopyPagesTo(1, srcDoc.GetNumberOfPages(), pdfDoc);
+           
         }
     }
 

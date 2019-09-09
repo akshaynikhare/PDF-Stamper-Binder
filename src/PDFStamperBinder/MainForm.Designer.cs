@@ -49,6 +49,7 @@ namespace PDFStamperBinder
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.helpLabel = new System.Windows.Forms.Label();
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,7 +62,7 @@ namespace PDFStamperBinder
             this.inputListBox.FormattingEnabled = true;
             this.inputListBox.Location = new System.Drawing.Point(4, 30);
             this.inputListBox.Name = "inputListBox";
-            this.inputListBox.Size = new System.Drawing.Size(749, 277);
+            this.inputListBox.Size = new System.Drawing.Size(787, 277);
             this.inputListBox.TabIndex = 0;
             this.inputListBox.SelectedIndexChanged += new System.EventHandler(this.inputListBox_SelectedIndexChanged);
             this.inputListBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.inputListBox_DragDrop);
@@ -80,12 +81,13 @@ namespace PDFStamperBinder
             this.Setting_stamp,
             this.config,
             this.toolStripSeparator3,
-            this.completeButton,
             this.StampButton,
-            this.complete_StampButton});
+            this.completeButton,
+            this.complete_StampButton,
+            this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(756, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(794, 25);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -203,7 +205,7 @@ namespace PDFStamperBinder
             this.complete_StampButton.Name = "complete_StampButton";
             this.complete_StampButton.Size = new System.Drawing.Size(105, 22);
             this.complete_StampButton.Text = "Bind + Stamp !";
-            this.complete_StampButton.Click += new System.EventHandler(this.Complete_StampButton_Click);
+            this.complete_StampButton.Click += new System.EventHandler(this.StampAndBindButton_Click);
             // 
             // saveFileDialog
             // 
@@ -223,7 +225,7 @@ namespace PDFStamperBinder
             this.progressBar.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.progressBar.Location = new System.Drawing.Point(4, 314);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(749, 16);
+            this.progressBar.Size = new System.Drawing.Size(787, 16);
             this.progressBar.TabIndex = 2;
             this.progressBar.Visible = false;
             // 
@@ -244,11 +246,22 @@ namespace PDFStamperBinder
             this.toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
             this.toolStripComboBox1.Click += new System.EventHandler(this.ToolStripComboBox1_Click);
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(42, 22);
+            this.toolStripButton1.Text = "about";
+            this.toolStripButton1.Click += new System.EventHandler(this.ToolStripButton1_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(756, 333);
+            this.ClientSize = new System.Drawing.Size(794, 333);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.helpLabel);
             this.Controls.Add(this.toolStrip1);
@@ -287,6 +300,7 @@ namespace PDFStamperBinder
         private System.Windows.Forms.ToolStripComboBox config;
         private System.Windows.Forms.ToolStripComboBox toolStripComboBox1;
         private System.Windows.Forms.ToolStripButton Setting_stamp;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
 
