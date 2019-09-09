@@ -1,4 +1,3 @@
-
 using System;
 using System.IO;
 using System.Linq;
@@ -8,18 +7,18 @@ namespace PDFStamperBinder
 {
     public partial class MainForm : Form
     {
-
-        static string fileext = ".ast";
-        static string SettingFolder = "stamp_Setting";
+        private static string fileext = ".ast";
+        private static string SettingFolder = "Stamp_Template";
+        private static Random random = new Random();
+        private string tempDir = System.IO.Directory.GetCurrentDirectory() + "\\temp\\";
 
         public MainForm()
         {
             InitializeComponent();
             UpdateUI();
             config.Items.Clear();
-            
         }
-        
+
         public void AddInputFile(string file)
         {
             switch (Combiner.TestSourceFile(file))
@@ -27,9 +26,11 @@ namespace PDFStamperBinder
                 case Combiner.SourceTestResult.Unreadable:
                     MessageBox.Show(string.Format("File could not be opened as a PDF document:\n\n{0}", file), "Illegal file type", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;
+
                 case Combiner.SourceTestResult.Protected:
                     MessageBox.Show(string.Format("PDF document does not allow copying:\n\n{0}", file), "Permission denied", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                     break;
+
                 case Combiner.SourceTestResult.Ok:
                     inputListBox.Items.Add(file);
                     break;
@@ -43,12 +44,13 @@ namespace PDFStamperBinder
                 if (inputListBox.Items.Count < 1)
                 {
                     StampButton.Enabled = false;
-                }else
+                }
+                else
                 {
                     StampButton.Enabled = true;
                 }
 
-                completeButton.Enabled = complete_StampButton.Enabled=  false;
+                completeButton.Enabled = complete_StampButton.Enabled = false;
                 RemoveAllButton.Enabled = false;
                 helpLabel.Text = "Drop PDF-documents in the box above, or choose \"add document\" from the toolbar";
             }
@@ -78,12 +80,12 @@ namespace PDFStamperBinder
 
         private void inputListBox_DragDrop(object sender, DragEventArgs e)
         {
-            var fileNames = (string[]) e.Data.GetData(DataFormats.FileDrop);
+            var fileNames = (string[])e.Data.GetData(DataFormats.FileDrop);
             Array.Sort(fileNames);
 
             foreach (var file in fileNames)
             {
-               // AddInputFile(file);
+                // AddInputFile(file);
             }
 
             UpdateUI();
@@ -91,10 +93,8 @@ namespace PDFStamperBinder
 
         private void combineButton_Click(object sender, EventArgs e)
         {
-
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                
                 using (var combiner = new Combiner(saveFileDialog.FileName))
                 {
                     progressBar.Visible = true;
@@ -106,29 +106,25 @@ namespace PDFStamperBinder
                         progressBar.Value = (int)(((i + 1) / (double)inputListBox.Items.Count) * 100);
                     }
 
-
                     this.Enabled = true;
                     progressBar.Visible = false;
                 }
 
                 System.Diagnostics.Process.Start(saveFileDialog.FileName);
             }
-             
         }
 
         private void addFileButton_Click(object sender, EventArgs e)
         {
-
-           if (addFileDialog.ShowDialog() == DialogResult.OK)
+            if (addFileDialog.ShowDialog() == DialogResult.OK)
             {
                 foreach (string file in addFileDialog.FileNames)
                 {
-                   AddInputFile(file);
+                    AddInputFile(file);
                 }
 
                 UpdateUI();
             }
-
         }
 
         private void inputListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -157,25 +153,11 @@ namespace PDFStamperBinder
             inputListBox.SelectedIndex = index;
         }
 
-       
         private void RemoveAllButton_Click(object sender, EventArgs e)
         {
             inputListBox.Items.Clear();
             UpdateUI();
         }
-
-        private void ToolStripComboBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void Config_DropDownClosed(object sender, EventArgs e)
-        {
-
-
-        }
-
 
         private void Setting_stamp_Click(object sender, EventArgs e)
         {
@@ -185,33 +167,28 @@ namespace PDFStamperBinder
             Updatelist();
         }
 
-
         public void Updatelist()
         {
             //config.Items.Clear();
-          
 
             //config.SelectedItem = 0;
         }
-
 
         private void StampButton_Click(object sender, EventArgs e)
         {
             if (config.SelectedIndex >= 0)
             {
-
                 progressBar.Visible = true;
                 this.Enabled = false;
-                               
-                string stampname = genrateStampImage();
 
-              
+                string stampname = genrateStampImage();
 
                 for (int i = 0; i < inputListBox.Items.Count; i++)
                 {
-                    if(File.Exists(stampname))
-                    { 
-                            if (File.Exists((string)inputListBox.Items[i])) { 
+                    if (File.Exists(stampname))
+                    {
+                        if (File.Exists((string)inputListBox.Items[i]))
+                        {
                             string outpath = Path.GetDirectoryName((string)inputListBox.Items[i]) + "\\";
                             outpath += Path.GetFileNameWithoutExtension((string)inputListBox.Items[i]) + "_stamped";
                             outpath += Path.GetExtension((string)inputListBox.Items[i]);
@@ -219,18 +196,17 @@ namespace PDFStamperBinder
                             smp.PdfStamp(outpath, stampname, (string)inputListBox.Items[i]);
                             System.Diagnostics.Process.Start(outpath);
                             progressBar.Value = (int)(((i + 1) / (double)inputListBox.Items.Count) * 100);
-                            }
-                            else
-                            {
-                                MessageBox.Show("file :"+ (string)inputListBox.Items[i]+" \n Does not exist ! skipping file ...", "Error");
-                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("file :" + (string)inputListBox.Items[i] + " \n Does not exist ! skipping file ...", "Error");
+                        }
                     }
                     else
                     {
                         MessageBox.Show("Error with the stamp file input & genration.", "Error");
                     }
                 }
-
 
                 this.Enabled = true;
                 progressBar.Visible = false;
@@ -240,7 +216,6 @@ namespace PDFStamperBinder
             {
                 MessageBox.Show("Select setting");
             }
-
         }
 
         private string genrateStampImage()
@@ -257,11 +232,6 @@ namespace PDFStamperBinder
             tt.close();
 
             return stampname;
-        }
-
-        private void Config_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -282,14 +252,9 @@ namespace PDFStamperBinder
             {
                 config.Items.Add(Path.GetFileNameWithoutExtension(file)); // to replace the specific text with blankfile);
                 //string contents = File.ReadAllText(file);
-                if (config.Items.Count > 0) config.SelectedItem=config.Items[0] ;
-                
+                if (config.Items.Count > 0) config.SelectedItem = config.Items[0];
             }
-
         }
-
-        private static Random random = new Random();
-        private string tempDir = System.IO.Directory.GetCurrentDirectory() + "\\temp\\";
 
         public static string RandomString(int length)
         {
@@ -297,11 +262,6 @@ namespace PDFStamperBinder
             return new string(Enumerable.Repeat(chars, length)
               .Select(s => s[random.Next(s.Length)]).ToArray());
         }
-
-
-
-
-       
 
         private void ToolStripButton1_Click(object sender, EventArgs e)
         {
@@ -311,14 +271,10 @@ namespace PDFStamperBinder
 
         private void StampAndBindButton_Click(object sender, EventArgs e)
         {
-
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-
                 string stampname = genrateStampImage();
-                string pdfname = tempDir+ RandomString(10) + ".pdf";
-                
-
+                string pdfname = tempDir + RandomString(10) + ".pdf";
 
                 using (var combiner = new Combiner(pdfname))
                 {
@@ -331,13 +287,9 @@ namespace PDFStamperBinder
                         progressBar.Value = (int)(((i + 1) / (double)inputListBox.Items.Count) * 90);
                     }
 
-
                     this.Enabled = true;
                     progressBar.Visible = false;
                 }
-                
-
-
 
                 if (File.Exists(stampname))
                 {
@@ -355,7 +307,7 @@ namespace PDFStamperBinder
                 {
                     MessageBox.Show("Error with the stamp file input & genration.", "Error");
                 }
-                                
+
                 System.Diagnostics.Process.Start(saveFileDialog.FileName);
                 File.Delete(stampname);
                 File.Delete(pdfname);

@@ -1,25 +1,22 @@
-﻿using iText.IO.Image;
+﻿using System.IO;
+using iText.IO.Image;
 using iText.Kernel.Pdf;
 using iText.Kernel.Pdf.Canvas;
 using iText.Kernel.Pdf.Extgstate;
-using System.IO;
 
 namespace PDFStamperBinder
 {
-
-    class Stamper 
+    internal class Stamper
     {
         private static int w = 100, h = 100, x = 0, y = 0;
-        private static float transprency = 0.6f, rotation=10f;
+        private static float transprency = 0.6f, rotation = 10f;
 
-        
         public Stamper()
         { }
 
-       public void PdfStamp(string fileout,string stamp, string filein)
+        public void PdfStamp(string fileout, string stamp, string filein)
         {
-
-            if(File.Exists(filein) && File.Exists(stamp))
+            if (File.Exists(filein) && File.Exists(stamp))
             {
                 PdfDocument pdf = new PdfDocument(new PdfReader(filein), new PdfWriter(fileout));
                 // MessageBox.Show(pdf.GetNumberOfPages().ToString());
@@ -39,15 +36,5 @@ namespace PDFStamperBinder
                 pdf.Close();
             }
         }
-
-
     }
 }
-
-
-
-
-
-
-       
-  

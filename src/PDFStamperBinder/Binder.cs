@@ -1,6 +1,6 @@
 /*
  * Copyright 2019 - 2020 akshay nikhare
- * 
+ *
  * This file is part of PDFStamperBinder.
  *
  * PDFStamperBinder is free software: you can redistribute it and/or modify
@@ -12,34 +12,25 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with PDFStamperBinder.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using iText.Kernel.Pdf;
-using iText.Layout;
 using System;
-using System.IO;
-using System.Windows.Forms;
-
+using iText.Kernel.Pdf;
 
 namespace PDFStamperBinder
 {
-
-    
-    class Combiner : IDisposable
+    internal class Combiner : IDisposable
     {
         private readonly PdfDocument pdfDoc;
-       // private readonly PdfCopy _pdfCopy;
+        // private readonly PdfCopy _pdfCopy;
 
         public Combiner(string outputFilePath)
         {
-
             this.pdfDoc = new PdfDocument(new PdfWriter(outputFilePath).SetSmartMode(true));
-           
         }
-
 
         public void Dispose()
         {
@@ -68,13 +59,8 @@ namespace PDFStamperBinder
 
         internal void AddFiletoBind(string fileName)
         {
-           
             PdfDocument srcDoc = new PdfDocument(new PdfReader(fileName));
             srcDoc.CopyPagesTo(1, srcDoc.GetNumberOfPages(), pdfDoc);
-           
         }
     }
-
-
-
 }

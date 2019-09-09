@@ -1,6 +1,6 @@
 ﻿/*
  * Copyright 2019 - 2020 akshay nikhare
- * 
+ *
  * This file is part of PDFStamperBinder.
  *
  * PDFStamperBinder is free software: you can redistribute it and/or modify
@@ -12,7 +12,7 @@
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with PDFStamperBinder.  If not, see <http://www.gnu.org/licenses/>.
  */
@@ -24,12 +24,12 @@ using System.Windows.Forms;
 
 namespace PDFStamperBinder
 {
-    static class Program
+    internal static class Program
     {
         public static MainForm MainForm { get; private set; }
 
         [STAThread]
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             // Start uninstallation if command line is /u {product-code}.
             if (args.Length == 2 && args[0].Equals("/u", StringComparison.OrdinalIgnoreCase))
@@ -51,11 +51,11 @@ namespace PDFStamperBinder
                 Array.Sort(fileNames);
 
                 //var loader = new ProcessLinker();
-               // loader.SendFileList(fileNames);
-//
-               // if (loader.IsServer || args.Length == 0)
-               // {
-                    Application.Run(Program.MainForm);
+                // loader.SendFileList(fileNames);
+                //
+                // if (loader.IsServer || args.Length == 0)
+                // {
+                Application.Run(Program.MainForm);
                 //}
             }
         }

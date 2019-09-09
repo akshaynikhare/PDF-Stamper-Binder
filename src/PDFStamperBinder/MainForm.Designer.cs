@@ -41,15 +41,15 @@ namespace PDFStamperBinder
             this.Setting_stamp = new System.Windows.Forms.ToolStripButton();
             this.config = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.completeButton = new System.Windows.Forms.ToolStripButton();
             this.StampButton = new System.Windows.Forms.ToolStripButton();
+            this.completeButton = new System.Windows.Forms.ToolStripButton();
             this.complete_StampButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.addFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.helpLabel = new System.Windows.Forms.Label();
             this.toolStripComboBox1 = new System.Windows.Forms.ToolStripComboBox();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -168,13 +168,21 @@ namespace PDFStamperBinder
             // 
             this.config.Name = "config";
             this.config.Size = new System.Drawing.Size(200, 25);
-            this.config.DropDownClosed += new System.EventHandler(this.Config_DropDownClosed);
-            this.config.Click += new System.EventHandler(this.Config_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // StampButton
+            // 
+            this.StampButton.Enabled = false;
+            this.StampButton.Image = ((System.Drawing.Image)(resources.GetObject("StampButton.Image")));
+            this.StampButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.StampButton.Name = "StampButton";
+            this.StampButton.Size = new System.Drawing.Size(67, 22);
+            this.StampButton.Text = "Stamp !";
+            this.StampButton.Click += new System.EventHandler(this.StampButton_Click);
             // 
             // completeButton
             // 
@@ -187,16 +195,6 @@ namespace PDFStamperBinder
             this.completeButton.Text = "Bind";
             this.completeButton.Click += new System.EventHandler(this.combineButton_Click);
             // 
-            // StampButton
-            // 
-            this.StampButton.Enabled = false;
-            this.StampButton.Image = ((System.Drawing.Image)(resources.GetObject("StampButton.Image")));
-            this.StampButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.StampButton.Name = "StampButton";
-            this.StampButton.Size = new System.Drawing.Size(67, 22);
-            this.StampButton.Text = "Stamp !";
-            this.StampButton.Click += new System.EventHandler(this.StampButton_Click);
-            // 
             // complete_StampButton
             // 
             this.complete_StampButton.Enabled = false;
@@ -206,6 +204,17 @@ namespace PDFStamperBinder
             this.complete_StampButton.Size = new System.Drawing.Size(105, 22);
             this.complete_StampButton.Text = "Bind + Stamp !";
             this.complete_StampButton.Click += new System.EventHandler(this.StampAndBindButton_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(42, 22);
+            this.toolStripButton1.Text = "about";
+            this.toolStripButton1.Click += new System.EventHandler(this.ToolStripButton1_Click);
             // 
             // saveFileDialog
             // 
@@ -244,18 +253,6 @@ namespace PDFStamperBinder
             // 
             this.toolStripComboBox1.Name = "toolStripComboBox1";
             this.toolStripComboBox1.Size = new System.Drawing.Size(121, 23);
-            this.toolStripComboBox1.Click += new System.EventHandler(this.ToolStripComboBox1_Click);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(42, 22);
-            this.toolStripButton1.Text = "about";
-            this.toolStripButton1.Click += new System.EventHandler(this.ToolStripButton1_Click);
             // 
             // MainForm
             // 

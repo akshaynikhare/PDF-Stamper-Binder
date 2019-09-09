@@ -6,10 +6,10 @@ using System.Windows.Forms;
 
 namespace PDFStamperBinder
 {
-    struct Tag
+    internal struct Tag
     {
-        string name;
-        string replacemnet;
+        private string name;
+        private string replacemnet;
 
         public Tag(string n, string r) : this()
         {
@@ -19,54 +19,41 @@ namespace PDFStamperBinder
 
         public string Name { get => name; set => name = value; }
         public string Replacemnet { get => replacemnet; set => replacemnet = value; }
-
     }
 
-
-    class html2image
+    internal class html2image
     {
-
-
         public static List<Tag> tags = new List<Tag>();
-
 
         public string fileName;
         public bool running = false;
         public string html;
         public string BaseURL;
-        Thread th;
-        private Color colr= Color.Empty;
+        private Thread th;
+        private Color colr = Color.Empty;
 
         public html2image(string html, string baseurl)
         {
-            
             running = false;
             this.BaseURL = baseurl;
-            tags.Add(new Tag("<!––#baseUrl#-->", BaseURL.Replace('\\','/')));
+            tags.Add(new Tag("<!––#baseUrl#-->", BaseURL.Replace('\\', '/')));
             this.html = html;
-
-
-
         }
 
-        void webBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        private void webBrowser_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
             var webBrowser = (WebBrowser)sender;
             using (Bitmap bitmap = new Bitmap(webBrowser.Width, webBrowser.Height))
             {
-
                 webBrowser.DrawToBitmap(bitmap, new System.Drawing.Rectangle(0, 0, bitmap.Width, bitmap.Height));
                 bitmap.MakeTransparent(colr);
                 bitmap.Save(fileName, System.Drawing.Imaging.ImageFormat.Png);
                 running = false;
-
             }
         }
 
         internal void Generate(string filename, int width = 500, int height = 500)
         {
-
-
             this.fileName = filename;
             th = new Thread(() =>
             {
@@ -87,14 +74,12 @@ namespace PDFStamperBinder
         private string ConvertTag2path()
         {
             String newHtml = html;
-            if (BaseURL!=null && html != null)
+            if (BaseURL != null && html != null)
             {
-               
-                foreach(var x in tags)
+                foreach (var x in tags)
                 {
                     newHtml = newHtml.Replace(x.Name, x.Replacemnet);
                 }
-
             }
 
             return newHtml;
