@@ -1,0 +1,61 @@
+250,150,0,0,3$
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.container {
+  position: relative;
+  text-align: center;
+font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+font-size: 26px;
+
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+.centered {
+  position: absolute;
+  top: 38%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <img src="<?Setting_Dir?>/img/indoline_master.png"  style="width:100%;">
+  <div class="centered">
+<a id="demo"></a>
+</div>
+</div>
+
+</body>
+<script>
+var d = new Date();
+document.getElementById("demo").innerHTML = d.getDate()+" - "+d.getMonth()+" - "+d.getFullYear() ;
+</script>
+</html> 

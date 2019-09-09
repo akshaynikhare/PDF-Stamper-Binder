@@ -50,13 +50,13 @@ namespace PDFStamperBinder
                 Array.Copy(args, fileNames, args.Length);
                 Array.Sort(fileNames);
 
-                var loader = new ProcessLinker();
-                loader.SendFileList(fileNames);
-
-                if (loader.IsServer || args.Length == 0)
-                {
+                //var loader = new ProcessLinker();
+               // loader.SendFileList(fileNames);
+//
+               // if (loader.IsServer || args.Length == 0)
+               // {
                     Application.Run(Program.MainForm);
-                }
+                //}
             }
         }
     }

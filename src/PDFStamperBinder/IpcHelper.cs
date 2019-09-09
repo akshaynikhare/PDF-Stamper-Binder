@@ -20,10 +20,10 @@
 using System;
 using System.Runtime.Remoting;
 using System.Runtime.Remoting.Channels;
-using System.Runtime.Remoting.Channels.Ipc;
+//using System.Runtime.Remoting.Channels.Ipc;
 
 namespace PDFStamperBinder
-{
+{/*
     public class ProcessLinker
     {
         IChannel channel;
@@ -74,4 +74,7 @@ namespace PDFStamperBinder
             }
         }
     }
+
+
+    */
 }

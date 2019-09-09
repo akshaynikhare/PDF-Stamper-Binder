@@ -1,10 +1,7 @@
+
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Text;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace PDFStamperBinder
@@ -22,7 +19,7 @@ namespace PDFStamperBinder
             config.Items.Clear();
             
         }
-
+        
         public void AddInputFile(string file)
         {
             switch (Combiner.TestSourceFile(file))
@@ -86,7 +83,7 @@ namespace PDFStamperBinder
 
             foreach (var file in fileNames)
             {
-                AddInputFile(file);
+               // AddInputFile(file);
             }
 
             UpdateUI();
@@ -94,8 +91,11 @@ namespace PDFStamperBinder
 
         private void combineButton_Click(object sender, EventArgs e)
         {
+
+            /*
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
+                
                 using (var combiner = new Combiner(saveFileDialog.FileName))
                 {
                     progressBar.Visible = true;
@@ -113,7 +113,9 @@ namespace PDFStamperBinder
                 }
 
                 System.Diagnostics.Process.Start(saveFileDialog.FileName);
+               
             }
+             */
         }
 
         private void addFileButton_Click(object sender, EventArgs e)
@@ -123,7 +125,7 @@ namespace PDFStamperBinder
             {
                 foreach (string file in addFileDialog.FileNames)
                 {
-                    AddInputFile(file);
+                   AddInputFile(file);
                 }
 
                 UpdateUI();
@@ -224,6 +226,17 @@ namespace PDFStamperBinder
 
         }
 
+        private static Random random = new Random();
+        public static string RandomString(int length)
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            return new string(Enumerable.Repeat(chars, length)
+              .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+
+
+
+
         private void StampButton_Click(object sender, EventArgs e)
         {
             if(config.SelectedIndex >= 0) { 
@@ -231,13 +244,29 @@ namespace PDFStamperBinder
                     progressBar.Visible = true;
                     this.Enabled = false;
                     for (int i = 0; i < inputListBox.Items.Count; i++)
-                            {
-                        string outpath = Path.GetDirectoryName((string)inputListBox.Items[i]) + "\\";
-                        outpath += Path.GetFileNameWithoutExtension((string)inputListBox.Items[i]) + "_stamped";
-                        outpath += Path.GetExtension((string)inputListBox.Items[i]) ;
-                        Stamper smp = new Stamper();
-                        smp.PdfStamp(outpath, SettingFolder + "\\" + config.SelectedItem.ToString()+ fileext, (string)inputListBox.Items[i]);
+                    {
+
+                    string stampname = System.IO.Directory.GetCurrentDirectory() + "\\temp\\" +RandomString(10) +".png";
+                    string k = System.IO.File.ReadAllText(SettingFolder + "\\" + config.SelectedItem.ToString() + fileext);
+
+                    html2image tt = new html2image(k, System.IO.Directory.GetCurrentDirectory() + "\\"+ SettingFolder );
+
+                    int sc = k.IndexOf("$-->");
+                    string[] sl = k.Substring(5, sc - 5).Split(',');
+                    tt.transprencyKey(System.Drawing.Color.White);
+                    tt.Generate(stampname, Convert.ToInt32(sl[0]), Convert.ToInt32(sl[1]));
+                    tt.close();
+                                       
+                    //System.Diagnostics.Process.Start(stampname);
+                    
+                    string outpath = Path.GetDirectoryName((string)inputListBox.Items[i]) + "\\";
+                    outpath += Path.GetFileNameWithoutExtension((string)inputListBox.Items[i]) + "_stamped";
+                    outpath += Path.GetExtension((string)inputListBox.Items[i]) ;
+                    Stamper smp = new Stamper();
+                    smp.PdfStamp(outpath, stampname, (string)inputListBox.Items[i]);
+                    System.Diagnostics.Process.Start(outpath);
                     progressBar.Value = (int)(((i + 1) / (double)inputListBox.Items.Count) * 100);
+
                     }
 
 

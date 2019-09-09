@@ -1,14 +1,7 @@
-﻿using Microsoft.VisualBasic;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PDFStamperBinder
@@ -143,7 +136,7 @@ namespace PDFStamperBinder
         private void AddSetting_Click(object sender, EventArgs e)
         {
 
-            string input = Interaction.InputBox("Prompt", "Title", "Default", -1, -1);
+           // string input = Interaction.InputBox("Prompt", "Title", "Default", -1, -1);
            /* if (SettingList.FindString(input) > 0)
             {
                 SettingList.Items.Add(input);

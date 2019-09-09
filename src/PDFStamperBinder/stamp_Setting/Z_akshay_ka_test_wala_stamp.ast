@@ -1,0 +1,36 @@
+250,150,12,13,3$
+
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<style>
+p.round2 {
+  border-radius: 10px;
+  height: 50px;
+}
+body{
+background: red;
+background-image: url("<?Setting_Dir?>/img/haha.png");
+border: 10px solid blue;
+}
+
+
+</style>
+</head>
+<body>
+
+<p class="round2">
+<a id="demo"></a>
+<a id="demo5"></a>
+</p>
+<?Setting_Dir?>
+<script>
+var d = new Date();
+document.getElementById("demo").innerHTML = d;
+</script>
+
+</body>
+</html>
+
