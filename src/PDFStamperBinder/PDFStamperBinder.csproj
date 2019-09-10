@@ -128,6 +128,12 @@
       <DependentUpon>AboutBox2.cs</DependentUpon>
     </Compile>
     <Compile Include="Binder.cs" />
+    <Compile Include="inputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inputBox.Designer.cs">
+      <DependentUpon>inputBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="html2image.cs" />
     <Compile Include="IpcHelper.cs" />
     <Compile Include="MainForm.cs">
@@ -145,8 +151,12 @@
       <DependentUpon>Setting.cs</DependentUpon>
     </Compile>
     <Compile Include="Stamper.cs" />
+    <Compile Include="UCS.cs" />
     <EmbeddedResource Include="AboutBox2.resx">
       <DependentUpon>AboutBox2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inputBox.resx">
+      <DependentUpon>inputBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

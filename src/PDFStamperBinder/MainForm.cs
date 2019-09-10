@@ -236,9 +236,9 @@ namespace PDFStamperBinder
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            if (!Directory.Exists("stamp_Setting"))
+            if (!Directory.Exists(SettingFolder))
             {
-                Directory.CreateDirectory("stamp_Setting");
+                Directory.CreateDirectory(SettingFolder);
             }
 
             if (!Directory.Exists(tempDir))
