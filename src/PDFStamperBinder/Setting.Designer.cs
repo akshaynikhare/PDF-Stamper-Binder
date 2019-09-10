@@ -39,10 +39,10 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.w = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.angle = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.transprancy = new System.Windows.Forms.Label();
+            this.angle = new System.Windows.Forms.NumericUpDown();
+            this.anglelable = new System.Windows.Forms.Label();
+            this.transprancy = new System.Windows.Forms.NumericUpDown();
+            this.labletrans = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.printPreview = new System.Windows.Forms.PrintPreviewControl();
             this.printDocument = new System.Drawing.Printing.PrintDocument();
@@ -61,8 +61,8 @@
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.pageSetup = new System.Windows.Forms.PageSetupDialog();
             ((System.ComponentModel.ISupportInitialize)(this.w)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.angle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transprancy)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
@@ -127,10 +127,11 @@
             // anchor
             // 
             this.anchor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.anchor.Location = new System.Drawing.Point(71, 6);
+            this.anchor.Location = new System.Drawing.Point(100, 6);
             this.anchor.Name = "anchor";
-            this.anchor.Size = new System.Drawing.Size(102, 21);
+            this.anchor.Size = new System.Drawing.Size(91, 21);
             this.anchor.TabIndex = 0;
+            this.anchor.SelectedValueChanged += new System.EventHandler(this.W_ValueChanged);
             // 
             // label3
             // 
@@ -138,7 +139,7 @@
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Location = new System.Drawing.Point(3, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 30);
+            this.label3.Size = new System.Drawing.Size(91, 30);
             this.label3.TabIndex = 21;
             this.label3.Text = "Anchor";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -197,54 +198,67 @@
             0,
             0,
             0});
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.numericUpDown1.Location = new System.Drawing.Point(71, 69);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            5000,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(102, 20);
-            this.numericUpDown1.TabIndex = 38;
+            this.w.ValueChanged += new System.EventHandler(this.W_ValueChanged);
             // 
             // angle
             // 
-            this.angle.AutoSize = true;
-            this.angle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.angle.Location = new System.Drawing.Point(3, 60);
-            this.angle.Name = "angle";
-            this.angle.Size = new System.Drawing.Size(62, 32);
-            this.angle.TabIndex = 37;
-            this.angle.Text = "Angle";
-            this.angle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.numericUpDown2.Location = new System.Drawing.Point(71, 37);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
+            this.angle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.angle.Location = new System.Drawing.Point(100, 69);
+            this.angle.Maximum = new decimal(new int[] {
             5000,
             0,
             0,
             0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(102, 20);
-            this.numericUpDown2.TabIndex = 40;
+            this.angle.Name = "angle";
+            this.angle.Size = new System.Drawing.Size(91, 20);
+            this.angle.TabIndex = 38;
+            this.angle.Value = new decimal(new int[] {
+            350,
+            0,
+            0,
+            0});
+            this.angle.ValueChanged += new System.EventHandler(this.W_ValueChanged);
+            // 
+            // anglelable
+            // 
+            this.anglelable.AutoSize = true;
+            this.anglelable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.anglelable.Location = new System.Drawing.Point(3, 60);
+            this.anglelable.Name = "anglelable";
+            this.anglelable.Size = new System.Drawing.Size(91, 32);
+            this.anglelable.TabIndex = 37;
+            this.anglelable.Text = "Angle(0-360)";
+            this.anglelable.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // transprancy
             // 
-            this.transprancy.AutoSize = true;
-            this.transprancy.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.transprancy.Location = new System.Drawing.Point(3, 30);
+            this.transprancy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.transprancy.Location = new System.Drawing.Point(100, 37);
+            this.transprancy.Maximum = new decimal(new int[] {
+            5000,
+            0,
+            0,
+            0});
             this.transprancy.Name = "transprancy";
-            this.transprancy.Size = new System.Drawing.Size(62, 30);
-            this.transprancy.TabIndex = 39;
-            this.transprancy.Text = "transprancy";
-            this.transprancy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.transprancy.Size = new System.Drawing.Size(91, 20);
+            this.transprancy.TabIndex = 40;
+            this.transprancy.Value = new decimal(new int[] {
+            40,
+            0,
+            0,
+            0});
+            this.transprancy.ValueChanged += new System.EventHandler(this.W_ValueChanged);
+            // 
+            // labletrans
+            // 
+            this.labletrans.AutoSize = true;
+            this.labletrans.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labletrans.Location = new System.Drawing.Point(3, 30);
+            this.labletrans.Name = "labletrans";
+            this.labletrans.Size = new System.Drawing.Size(91, 30);
+            this.labletrans.TabIndex = 39;
+            this.labletrans.Text = "transprancy(%)";
+            this.labletrans.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tableLayoutPanel1
             // 
@@ -404,6 +418,7 @@
             0,
             0,
             0});
+            this.h.ValueChanged += new System.EventHandler(this.W_ValueChanged);
             // 
             // label6
             // 
@@ -428,11 +443,7 @@
             this.y.Name = "y";
             this.y.Size = new System.Drawing.Size(63, 20);
             this.y.TabIndex = 45;
-            this.y.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
+            this.y.ValueChanged += new System.EventHandler(this.W_ValueChanged);
             // 
             // label1
             // 
@@ -457,11 +468,7 @@
             this.x.Name = "x";
             this.x.Size = new System.Drawing.Size(61, 20);
             this.x.TabIndex = 42;
-            this.x.Value = new decimal(new int[] {
-            100,
-            0,
-            0,
-            0});
+            this.x.ValueChanged += new System.EventHandler(this.W_ValueChanged);
             // 
             // label2
             // 
@@ -477,14 +484,14 @@
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.ColumnCount = 2;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel6.Controls.Add(this.label3, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.anchor, 1, 0);
-            this.tableLayoutPanel6.Controls.Add(this.transprancy, 0, 1);
-            this.tableLayoutPanel6.Controls.Add(this.angle, 0, 2);
-            this.tableLayoutPanel6.Controls.Add(this.numericUpDown1, 1, 2);
-            this.tableLayoutPanel6.Controls.Add(this.numericUpDown2, 1, 1);
+            this.tableLayoutPanel6.Controls.Add(this.labletrans, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.anglelable, 0, 2);
+            this.tableLayoutPanel6.Controls.Add(this.angle, 1, 2);
+            this.tableLayoutPanel6.Controls.Add(this.transprancy, 1, 1);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(0, 134);
             this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
@@ -512,8 +519,8 @@
             this.Text = "Setting";
             this.Load += new System.EventHandler(this.Setting_Load);
             ((System.ComponentModel.ISupportInitialize)(this.w)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.angle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transprancy)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -544,10 +551,10 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.NumericUpDown w;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label angle;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.Label transprancy;
+        private System.Windows.Forms.NumericUpDown angle;
+        private System.Windows.Forms.Label anglelable;
+        private System.Windows.Forms.NumericUpDown transprancy;
+        private System.Windows.Forms.Label labletrans;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button btnPageSetup;
         private System.Windows.Forms.PrintPreviewControl printPreview;

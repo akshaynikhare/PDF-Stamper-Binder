@@ -8,8 +8,8 @@ namespace PDFStamperBinder
 {
     internal class Stamper
     {
-        private static int w = 100, h = 100, x = 0, y = 0;
-        private static float transprency = 0.6f, rotation = 10f;
+        internal int x = 0, y = 0;
+        internal float transprency = 0.6f, rotation = 10f;
 
         public Stamper()
         { }
@@ -27,7 +27,8 @@ namespace PDFStamperBinder
                     image.SetRotation(rotation);
                     canvas.SaveState();
                     PdfExtGState state = new PdfExtGState();
-                    state.SetFillOpacity(transprency);
+
+                    state.SetFillOpacity(transprency > 1f ? (transprency / 100) : transprency);
                     canvas.SetExtGState(state);
                     //TODO: add width & height to image
                     canvas.AddImage(image, x, y, false);

@@ -1,26 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PDFStamperBinder
 {
-    class UCS
+    internal class UCS
     {
-        public enum Corner { TopLeft ,BottomLeft,TopRight,BottomRight }
+        public enum Corner { TopLeft, BottomLeft, TopRight, BottomRight }
+
         public static List<string> CornerTextList = new List<string>(new string[] { "TopLeft", "BottomLeft", "TopRight", "BottomRight" });
 
-
-        internal static Point shiftAnchor(Corner oldUCS, Corner newUCS, int paperW, int paperH,  int objectW, int objectH, Point refPoint)
+        internal static Point shiftAnchor(Corner oldUCS, Corner newUCS, int paperW, int paperH, int objectW, int objectH, Point refPoint)
         {
-
             if (oldUCS == newUCS || oldUCS != Corner.TopLeft) return refPoint;
 
             int x = 0;
             int y = 0;
-
 
             switch (newUCS)
             {
@@ -36,7 +30,7 @@ namespace PDFStamperBinder
 
                 case Corner.BottomLeft:
                     x = refPoint.X;
-                    y = paperH-refPoint.Y-objectH;
+                    y = paperH - refPoint.Y - objectH;
                     break;
 
                 case Corner.BottomRight:
@@ -45,11 +39,8 @@ namespace PDFStamperBinder
                     break;
             }
 
-                                          
-            return new Point(x,y); ;
+            return new Point(x, y); ;
             // throw new NotImplementedException();
         }
-
-     
     }
 }

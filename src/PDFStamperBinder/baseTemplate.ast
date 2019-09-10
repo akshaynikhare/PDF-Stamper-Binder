@@ -1,4 +1,4 @@
-<!––$250,150,0,0,3$-->
+<!––$250,150,0,0,3,30,0$-->
 <!–-
 
 Standard template for Pdf stamper - A Dynamic HTML stamper  
@@ -17,64 +17,19 @@ box-sizing: border-box;
 font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
 font-size: 26px;
 text-align:center;
+background-color:#bbb;
 }
-html, body, #container {
-    height: 99.2%;
-}
-#container {
-    position: relative;
-}
-main {
-    position: absolute;
-    width: 100%;
-    top: 0;
-    bottom: 0;
-}
-.half {
-    height: 33.33%;
-    background-color:#ddd;
-}
-.column {
-  float: left;
-  width: 33.33%;
-  padding: 10px;
-  height:100%;
-  background-color:#eee;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
 </style>
 </head>
 <body>
 <div id="container">
-       <main>
-        <section class="half"></section>
-        <section class="half">
-            <div class="row">
-              <div class="column" >
-               <br><br><br><br>
-              </div>
-              <div class="column" style="background-color:#bbb;">
+
                  <div class="centered">
                  <strong><a>HTML Stamp Template</a></strong>
                  <br><br>
                   <a>File Base URL: <!––#baseUrl#--> </a><br>
                   <a id="demo"></a>
-                </div>
-              </div>
-              <div class="column" >
-               <br><br><br><br>
-              </div>
-            </div>
-       
-        </section>
-        <section class="half"></section>
-      </main>
+              
 </div>
 </body>
 <script>

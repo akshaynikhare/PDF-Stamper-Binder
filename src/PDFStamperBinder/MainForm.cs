@@ -11,6 +11,10 @@ namespace PDFStamperBinder
         private static string SettingFolder = "Stamp_Template";
         private static Random random = new Random();
         private string tempDir = System.IO.Directory.GetCurrentDirectory() + "\\temp\\";
+        private UCS.Corner anchor = UCS.Corner.TopLeft;
+        private float transprancy = 1f;
+        private float angle = 0f;
+        private int x = 0, y = 0;
 
         public MainForm()
         {
@@ -193,6 +197,10 @@ namespace PDFStamperBinder
                             outpath += Path.GetFileNameWithoutExtension((string)inputListBox.Items[i]) + "_stamped";
                             outpath += Path.GetExtension((string)inputListBox.Items[i]);
                             Stamper smp = new Stamper();
+                            smp.transprency = transprancy;
+                            smp.rotation = angle;
+                            smp.x = x;
+                            smp.y = y;
                             smp.PdfStamp(outpath, stampname, (string)inputListBox.Items[i]);
                             System.Diagnostics.Process.Start(outpath);
                             progressBar.Value = (int)(((i + 1) / (double)inputListBox.Items.Count) * 100);
@@ -228,6 +236,12 @@ namespace PDFStamperBinder
             int sc = k.IndexOf("$-->");
             string[] sl = k.Substring(5, sc - 5).Split(',');
             tt.transprencyKey(System.Drawing.Color.White);
+            x = Convert.ToInt32(sl[2]);
+            y = Convert.ToInt32(sl[3]);
+            anchor = (UCS.Corner)Convert.ToInt32(sl[4]);
+            transprancy = Convert.ToInt32(sl[5]);
+            angle = Convert.ToInt32(sl[6]);
+
             tt.Generate(stampname, Convert.ToInt32(sl[0]), Convert.ToInt32(sl[1]));
             tt.close();
 
