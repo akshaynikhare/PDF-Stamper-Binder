@@ -22,8 +22,8 @@ using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("PDFStamperBinder")]
 [assembly: AssemblyProduct("PDFStamperBinder")]
-[assembly: AssemblyDescription("A simple tool to merge several PDF documents into one")]
-[assembly: AssemblyCopyright("Copyright 2019 - 2020 akshay nikhare")]
-[assembly: AssemblyCompany("Malamute ApS")]
+[assembly: AssemblyDescription("A simple tool to stamp & mearge several PDF documents into one")]
+[assembly: AssemblyCopyright("akshay nikhare   © Copyright 2019 - 2020 ")]
+[assembly: AssemblyCompany("Hideout")]
 [assembly: ComVisible(false)]
 [assembly: AssemblyVersion("1.2.*")]

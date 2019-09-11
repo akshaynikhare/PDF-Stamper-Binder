@@ -24,7 +24,7 @@ font-size: 26px;
 <body>
 
 <div class="container">
-  <img src="<!––#baseUrl#-->/indoline_img/indoline_master_copy.png"  style="width:100%;">
+  <img src="<!––#baseUrl#-->/img/development_copy.png"  style="width:100%;">
   <div class="centered">
 <a id="demo"></a>
 </div>

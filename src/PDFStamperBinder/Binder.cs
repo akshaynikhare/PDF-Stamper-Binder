@@ -17,8 +17,8 @@
  * along with PDFStamperBinder.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-using System;
 using iText.Kernel.Pdf;
+using System;
 
 namespace PDFStamperBinder
 {

@@ -42,7 +42,7 @@ namespace PDFStamperBinder
             string k = html.Text;
             html2image tt = new html2image(k, System.IO.Directory.GetCurrentDirectory() + "\\" + SettingFolder);
             tt.transprencyKey(System.Drawing.Color.White);
-            tt.Generate(stampname, (int)w.Value, (int)h.Value);
+            tt.Generate(stampname, (int)w.Value, (int)h.Value, (float)angle.Value);
             //tt.Generate(stampname);
             tt.close();
 
@@ -212,38 +212,18 @@ namespace PDFStamperBinder
 
         private void PrintDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
+
             //MessageBox.Show(e.PageSettings.PaperSize);
             pageSize = e.PageSettings.PaperSize;
 
-            Point newPt = UCS.shiftAnchor(UCS.Corner.TopLeft, (UCS.Corner)anchor.SelectedIndex,
+            Point newPt = UCS.shiftAnchor(UCS.Type.form, UCS.Corner.TopLeft, (UCS.Corner)anchor.SelectedIndex,
                                             pageSize.Width, pageSize.Height,
 
                                             (int)w.Value, (int)h.Value,
 
                                             new Point((int)x.Value, (int)y.Value)
                                             );
-
-            //Point newPt = UCS.shiftAnchor(UCS.Corner.TopLeft, (UCS.Corner)anchor.SelectedIndex,new Point((int)x.Value, (int)y.Value));
-
-            Bitmap b = new Bitmap(new Bitmap(stampname));
-
-            int ri = (int)Math.Sqrt(b.Width * b.Width + b.Height * b.Height);
-
-            Bitmap returnBitmap = new Bitmap(ri, ri);
-            //make a graphics object from the empty bitmap
-            using (Graphics g = Graphics.FromImage(returnBitmap))
-            {
-                //move rotation point to center of image
-                g.TranslateTransform((float)b.Width / 2, (float)b.Height / 2);
-                //rotate
-                g.RotateTransform((float)angle.Value);
-                //move image back
-                g.TranslateTransform(-(float)b.Width / 2, -(float)b.Height / 2);
-                //draw passed in image onto graphics object
-                g.DrawImage(b, new Point(0, 0));
-            }
-
-            e.Graphics.DrawImage(returnBitmap, newPt);
+            e.Graphics.DrawImage(new Bitmap(stampname), newPt);
         }
 
         private void PrintPreview_Paint(object sender, PaintEventArgs e)
@@ -255,5 +235,9 @@ namespace PDFStamperBinder
         {
             btnUpdate.Enabled = true;
         }
+
+
+
+
     }
 }

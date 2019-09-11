@@ -196,12 +196,44 @@ namespace PDFStamperBinder
                             string outpath = Path.GetDirectoryName((string)inputListBox.Items[i]) + "\\";
                             outpath += Path.GetFileNameWithoutExtension((string)inputListBox.Items[i]) + "_stamped";
                             outpath += Path.GetExtension((string)inputListBox.Items[i]);
-                            Stamper smp = new Stamper();
-                            smp.transprency = transprancy;
-                            smp.rotation = angle;
-                            smp.x = x;
-                            smp.y = y;
-                            smp.PdfStamp(outpath, stampname, (string)inputListBox.Items[i]);
+
+
+                            if (File.Exists(outpath))
+                            {
+
+                                DialogResult dialogResult = MessageBox.Show("File aleard exist.\n" + outpath, "Over write ", MessageBoxButtons.YesNo);
+                                if (dialogResult == DialogResult.Yes)
+                                {
+                                    File.Delete(outpath);
+                                    Stamper smp = new Stamper();
+                                    smp.transprency = transprancy;
+                                    smp.rotation = angle;
+                                    smp.x = x;
+                                    smp.y = y;
+                                    smp.anchor = anchor;
+                                    smp.PdfStamp(outpath, stampname, (string)inputListBox.Items[i]);
+
+
+                                }
+                                else if (dialogResult == DialogResult.No)
+                                {
+                                    //do something else
+                                }
+
+                            }
+                            else
+                            {
+                                Stamper smp = new Stamper();
+                                smp.transprency = transprancy;
+                                smp.rotation = angle;
+                                smp.x = x;
+                                smp.y = y;
+                                smp.anchor = anchor;
+                                smp.PdfStamp(outpath, stampname, (string)inputListBox.Items[i]);
+
+
+                            }
+
                             System.Diagnostics.Process.Start(outpath);
                             progressBar.Value = (int)(((i + 1) / (double)inputListBox.Items.Count) * 100);
                         }
@@ -218,7 +250,7 @@ namespace PDFStamperBinder
 
                 this.Enabled = true;
                 progressBar.Visible = false;
-                File.Delete(stampname);
+                //File.Delete(stampname);
             }
             else
             {
@@ -242,7 +274,7 @@ namespace PDFStamperBinder
             transprancy = Convert.ToInt32(sl[5]);
             angle = Convert.ToInt32(sl[6]);
 
-            tt.Generate(stampname, Convert.ToInt32(sl[0]), Convert.ToInt32(sl[1]));
+            tt.Generate(stampname, Convert.ToInt32(sl[0]), Convert.ToInt32(sl[1]), angle);
             tt.close();
 
             return stampname;
@@ -310,6 +342,11 @@ namespace PDFStamperBinder
                     if (File.Exists(pdfname))
                     {
                         Stamper smp = new Stamper();
+                        smp.transprency = transprancy;
+                        smp.rotation = angle;
+                        smp.x = x;
+                        smp.y = y;
+                        smp.anchor = anchor;
                         smp.PdfStamp(saveFileDialog.FileName, stampname, pdfname);
                     }
                     else

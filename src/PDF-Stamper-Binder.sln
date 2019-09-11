@@ -5,16 +5,27 @@ VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFStamperBinder", "PDFStamperBinder\PDFStamperBinder.csproj", "{C4013FBF-4357-4580-9E6F-8EF23D5B04E4}"
 EndProject
+Project("{840C416C-B8F3-42BC-B0DD-F6BB14C9F8CB}") = "PdfStamperSetup", "PdfStamperSetup\PdfStamperSetup.aiproj", "{016FB4FA-6995-4AEC-AC57-28C6EEDCC0B9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		All|Any CPU = All|Any CPU
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C4013FBF-4357-4580-9E6F-8EF23D5B04E4}.All|Any CPU.ActiveCfg = Release|Any CPU
+		{C4013FBF-4357-4580-9E6F-8EF23D5B04E4}.All|Any CPU.Build.0 = Release|Any CPU
 		{C4013FBF-4357-4580-9E6F-8EF23D5B04E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C4013FBF-4357-4580-9E6F-8EF23D5B04E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4013FBF-4357-4580-9E6F-8EF23D5B04E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4013FBF-4357-4580-9E6F-8EF23D5B04E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{016FB4FA-6995-4AEC-AC57-28C6EEDCC0B9}.All|Any CPU.ActiveCfg = DefaultBuild
+		{016FB4FA-6995-4AEC-AC57-28C6EEDCC0B9}.All|Any CPU.Build.0 = DefaultBuild
+		{016FB4FA-6995-4AEC-AC57-28C6EEDCC0B9}.Debug|Any CPU.ActiveCfg = DefaultBuild
+		{016FB4FA-6995-4AEC-AC57-28C6EEDCC0B9}.Debug|Any CPU.Build.0 = DefaultBuild
+		{016FB4FA-6995-4AEC-AC57-28C6EEDCC0B9}.Release|Any CPU.ActiveCfg = DefaultBuild
+		{016FB4FA-6995-4AEC-AC57-28C6EEDCC0B9}.Release|Any CPU.Build.0 = DefaultBuild
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

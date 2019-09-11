@@ -6,40 +6,74 @@ namespace PDFStamperBinder
     internal class UCS
     {
         public enum Corner { TopLeft, BottomLeft, TopRight, BottomRight }
+        public enum Type { form, pdf }
 
         public static List<string> CornerTextList = new List<string>(new string[] { "TopLeft", "BottomLeft", "TopRight", "BottomRight" });
 
-        internal static Point shiftAnchor(Corner oldUCS, Corner newUCS, int paperW, int paperH, int objectW, int objectH, Point refPoint)
+        internal static Point shiftAnchor(Type type, Corner oldUCS, Corner newUCS, int paperW, int paperH, int objectW, int objectH, Point refPoint)
         {
-            if (oldUCS == newUCS || oldUCS != Corner.TopLeft) return refPoint;
-
             int x = 0;
             int y = 0;
 
-            switch (newUCS)
+            if (oldUCS == newUCS || oldUCS != Corner.TopLeft) return refPoint;
+
+            if (type == Type.form)
             {
-                default:
-                    x = refPoint.X;
-                    y = refPoint.Y;
-                    break;
+                switch (newUCS)
+                {
+                    default:
+                        //top left
+                        x = refPoint.X;
+                        y = refPoint.Y;
+                        break;
 
-                case Corner.TopRight:
-                    x = paperW - refPoint.X - objectW;
-                    y = refPoint.Y;
-                    break;
+                    case Corner.TopRight:
 
-                case Corner.BottomLeft:
-                    x = refPoint.X;
-                    y = paperH - refPoint.Y - objectH;
-                    break;
+                        x = paperW - refPoint.X - objectW;
+                        y = refPoint.Y;
+                        break;
 
-                case Corner.BottomRight:
-                    x = paperW - refPoint.X - objectW;
-                    y = paperH - refPoint.Y - objectH;
-                    break;
+                    case Corner.BottomLeft:
+                        x = refPoint.X;
+                        y = paperH - refPoint.Y - objectH;
+                        break;
+
+                    case Corner.BottomRight:
+                        x = paperW - refPoint.X - objectW;
+                        y = paperH - refPoint.Y - objectH;
+                        break;
+                }
+            }
+            else
+            {
+
+                switch (newUCS)
+                {
+                    default:
+                        //top left
+                        x = refPoint.X;
+                        y = paperH - refPoint.Y - objectH;
+                        break;
+
+                    case Corner.TopRight:
+                        x = paperW - refPoint.X - objectW;
+                        y = paperH - refPoint.Y - objectH;
+                        break;
+
+                    case Corner.BottomLeft:
+                        x = refPoint.X;
+                        y = refPoint.Y;
+                        break;
+
+                    case Corner.BottomRight:
+                        x = paperW - refPoint.X - objectW;
+                        y = refPoint.Y;
+                        break;
+                }
+
             }
 
-            return new Point(x, y); ;
+            return new Point(x, y);
             // throw new NotImplementedException();
         }
     }

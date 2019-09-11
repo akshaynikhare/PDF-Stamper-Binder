@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT Type="Advanced Installer" CreateVersion="16.3" version="16.3" Modules="simple" RootPath="." Language="en" Id="{F638652C-9BCC-4883-94A4-CA7EAC2B8D78}">
+  <COMPONENT cid="caphyon.advinst.msicomp.ProjectOptionsComponent">
+    <ROW Name="HiddenItems" Value="AppXProductDetailsComponent;AppXDependenciesComponent;AppXAppDetailsComponent;AppXVisualAssetsComponent;AppXCapabilitiesComponent;AppXAppDeclarationsComponent;AppXUriRulesComponent;FixupComponent"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_BouncyCastle.Crypto.dll" Value="..\packages\Portable.BouncyCastle.1.8.1.3\lib\net40"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Common.Logging.Core.dll" Value="..\packages\Common.Logging.Core.3.4.1\lib\net40"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_Common.Logging.dll" Value="..\packages\Common.Logging.3.4.1\lib\net40"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_PDFStamperBinder.exe" Value="..\PDFStamperBinder\bin\Debug"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_PDFStamperBinder.exe.config" Value="..\PDFStamperBinder\bin\Debug"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_itext.barcodes.dll" Value="..\packages\itext7.7.1.7\lib\net40"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_itext.forms.dll" Value="..\packages\itext7.7.1.7\lib\net40"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_itext.io.dll" Value="..\packages\itext7.7.1.7\lib\net40"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_itext.kernel.dll" Value="..\packages\itext7.7.1.7\lib\net40"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_itext.layout.dll" Value="..\packages\itext7.7.1.7\lib\net40"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_itext.pdfa.dll" Value="..\packages\itext7.7.1.7\lib\net40"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_itext.sign.dll" Value="..\packages\itext7.7.1.7\lib\net40"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_itext.styledxmlparser.dll" Value="..\packages\itext7.7.1.7\lib\net40"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_itext.svg.dll" Value="..\packages\itext7.7.1.7\lib\net40"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_BouncyCastle.Crypto.dll" Value="BouncyCastle.Crypto.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Common.Logging.Core.dll" Value="Common.Logging.Core.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_Common.Logging.dll" Value="Common.Logging.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_PDFStamperBinder.exe" Value="PDFStamperBinder.exe"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_PDFStamperBinder.exe.config" Value="PDFStamperBinder.exe.config"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_itext.barcodes.dll" Value="itext.barcodes.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_itext.forms.dll" Value="itext.forms.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_itext.io.dll" Value="itext.io.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_itext.kernel.dll" Value="itext.kernel.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_itext.layout.dll" Value="itext.layout.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_itext.pdfa.dll" Value="itext.pdfa.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_itext.sign.dll" Value="itext.sign.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_itext.styledxmlparser.dll" Value="itext.styledxmlparser.dll"/>
+    <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_itext.svg.dll" Value="itext.svg.dll"/>
+    <ROW Property="AI_RUN_AS_ADMIN" Value="1"/>
+    <ROW Property="ALLUSERS" Value="1"/>
+    <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
+    <ROW Property="ARPCONTACT" Value="+918237317049"/>
+    <ROW Property="ARPHELPLINK" Value="https://github.com/akshaynikhare/PDF-Stamper-Binder"/>
+    <ROW Property="ARPPRODUCTICON" Value="logo.exe" Type="8"/>
+    <ROW Property="ARPURLINFOABOUT" Value="https://github.com/akshaynikhare/PDF-Stamper-Binder"/>
+    <ROW Property="CTRLS" Value="2"/>
+    <ROW Property="Manufacturer" Value="Hideout"/>
+    <ROW Property="ProductCode" Value="1033:{25867FFC-6E99-4091-A71C-15B1C44F73F9} " Type="16"/>
+    <ROW Property="ProductLanguage" Value="1033"/>
+    <ROW Property="ProductName" Value="PDF Stamper &amp; Binder"/>
+    <ROW Property="ProductVersion" Value="1.4.25" Type="32"/>
+    <ROW Property="RUNAPPLICATION" Value="1" Type="4"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
+    <ROW Property="UpgradeCode" Value="{6E4ECEC3-F43A-4354-B65E-B80790814553}"/>
+    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40Display" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT50Display" MultiBuildValue="DefaultBuild:Windows 2000" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5X" MultiBuildValue="DefaultBuild:Windows XP/2003 RTM, Windows XP/2003 SP1, Windows XP SP2 x86" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT5XDisplay" MultiBuildValue="DefaultBuild:Windows XP/2003 RTM, Windows XP/2003 SP1, Windows XP SP2 x86" ValueLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="PDFStamperBinder_Dir" Directory_Parent="APPDIR" DefaultDir="PDFSTA~1|PDFStamperBinder"/>
+    <ROW Directory="ProgramMenuFolder" Directory_Parent="TARGETDIR" DefaultDir="PROGRA~1|ProgramMenuFolder" IsPseudoRoot="1"/>
+    <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
+    <ROW Directory="Stamp_Template_Dir" Directory_Parent="PDFStamperBinder_Dir" DefaultDir="STAMP_~1|Stamp_Template"/>
+    <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+    <ROW Directory="img_Dir" Directory_Parent="Stamp_Template_Dir" DefaultDir="img"/>
+    <ROW Directory="indoline_img_Dir" Directory_Parent="Stamp_Template_Dir" DefaultDir="INDOLI~1|indoline_img"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="APPDIR" ComponentId="{C08239F8-A165-47CD-AD38-D1A53D0367D6}" Directory_="APPDIR" Attributes="0"/>
+    <ROW Component="PDFStamperBinder_PrimaryOutput" ComponentId="{A504FFE8-E441-42FB-A11B-1E80ADCB89C4}" Directory_="PDFStamperBinder_Dir" Attributes="0" KeyPath="PDFStamperBinder.exe"/>
+    <ROW Component="PDFStamperBinder_References" ComponentId="{8084AACA-E25C-4872-9AFB-9544165ED5E5}" Directory_="PDFStamperBinder_Dir" Attributes="0" KeyPath="itext.svg.dll"/>
+    <ROW Component="ProductInformation" ComponentId="{03E32858-539E-46A8-AAE8-73557762857B}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
+    <ROW Component="SHORTCUTDIR" ComponentId="{15B5A441-FA10-4B16-98A9-1B015D37DF86}" Directory_="SHORTCUTDIR" Attributes="0"/>
+    <ROW Component="controlled_copy.ast" ComponentId="{BD6DE27F-41DB-4B47-9A93-EF6A9A5E20B6}" Directory_="Stamp_Template_Dir" Attributes="0" KeyPath="controlled_copy.ast" Type="0"/>
+    <ROW Component="controlled_copy.png" ComponentId="{435F3D98-54A2-42BB-B1F0-5C85A3377C5E}" Directory_="img_Dir" Attributes="0" KeyPath="controlled_copy.png" Type="0"/>
+    <ROW Component="indoline_controlled_copy.png" ComponentId="{BEF1B8EF-C402-4546-9E31-3EEA770D4440}" Directory_="indoline_img_Dir" Attributes="0" KeyPath="indoline_controlled_copy.png" Type="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
+    <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="PDFStamperBinder.exe" Component_="PDFStamperBinder_PrimaryOutput" FileName="PDFSTA~2.EXE|[|AI_PROPPATH_FILENAME_PERBUILD_PDFStamperBinder.exe]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_PDFStamperBinder.exe&gt;" SelfReg="false" DigSign="true"/>
+    <ROW File="PDFStamperBinder.exe.config" Component_="PDFStamperBinder_PrimaryOutput" FileName="PDFSTA~2.CON|[|AI_PROPPATH_FILENAME_PERBUILD_PDFStamperBinder.exe.config]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_PDFStamperBinder.exe.config&gt;" SelfReg="false"/>
+    <ROW File="BouncyCastle.Crypto.dll" Component_="PDFStamperBinder_References" FileName="BOUNCY~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_BouncyCastle.Crypto.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_BouncyCastle.Crypto.dll&gt;" SelfReg="false"/>
+    <ROW File="Common.Logging.Core.dll" Component_="PDFStamperBinder_References" FileName="COMMON~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Common.Logging.Core.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Common.Logging.Core.dll&gt;" SelfReg="false"/>
+    <ROW File="Common.Logging.dll" Component_="PDFStamperBinder_References" FileName="COMMON~3.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_Common.Logging.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_Common.Logging.dll&gt;" SelfReg="false"/>
+    <ROW File="itext.barcodes.dll" Component_="PDFStamperBinder_References" FileName="ITEXTB~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_itext.barcodes.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_itext.barcodes.dll&gt;" SelfReg="false"/>
+    <ROW File="itext.forms.dll" Component_="PDFStamperBinder_References" FileName="ITEXTF~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_itext.forms.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_itext.forms.dll&gt;" SelfReg="false"/>
+    <ROW File="itext.io.dll" Component_="PDFStamperBinder_References" FileName="ITEXTI~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_itext.io.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_itext.io.dll&gt;" SelfReg="false"/>
+    <ROW File="itext.kernel.dll" Component_="PDFStamperBinder_References" FileName="ITEXTK~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_itext.kernel.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_itext.kernel.dll&gt;" SelfReg="false"/>
+    <ROW File="itext.layout.dll" Component_="PDFStamperBinder_References" FileName="ITEXTL~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_itext.layout.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_itext.layout.dll&gt;" SelfReg="false"/>
+    <ROW File="itext.pdfa.dll" Component_="PDFStamperBinder_References" FileName="ITEXTP~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_itext.pdfa.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_itext.pdfa.dll&gt;" SelfReg="false"/>
+    <ROW File="itext.sign.dll" Component_="PDFStamperBinder_References" FileName="ITEXTS~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_itext.sign.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_itext.sign.dll&gt;" SelfReg="false"/>
+    <ROW File="itext.styledxmlparser.dll" Component_="PDFStamperBinder_References" FileName="ITEXTS~3.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_itext.styledxmlparser.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_itext.styledxmlparser.dll&gt;" SelfReg="false"/>
+    <ROW File="itext.svg.dll" Component_="PDFStamperBinder_References" FileName="ITEXTS~4.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_itext.svg.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_itext.svg.dll&gt;" SelfReg="false"/>
+    <ROW File="controlled_copy.ast" Component_="controlled_copy.ast" FileName="CONTRO~1.AST|controlled_copy.ast" Attributes="0" SourcePath="..\PDFStamperBinder\bin\Debug\Stamp_Template\controlled_copy.ast" SelfReg="false"/>
+    <ROW File="development_copy.ast" Component_="controlled_copy.ast" FileName="DEVELO~1.AST|development_copy.ast" Attributes="0" SourcePath="..\PDFStamperBinder\bin\Debug\Stamp_Template\development_copy.ast" SelfReg="false"/>
+    <ROW File="controlled_copy.png" Component_="controlled_copy.png" FileName="CONTRO~1.PNG|controlled_copy.png" Attributes="0" SourcePath="..\PDFStamperBinder\bin\Debug\Stamp_Template\img\controlled_copy.png" SelfReg="false"/>
+    <ROW File="developemnt_copy.png" Component_="controlled_copy.png" FileName="DEVELO~1.PNG|developemnt_copy.png" Attributes="0" SourcePath="..\PDFStamperBinder\bin\Debug\Stamp_Template\img\developemnt_copy.png" SelfReg="false"/>
+    <ROW File="master_copy.png" Component_="controlled_copy.png" FileName="MASTER~1.PNG|master_copy.png" Attributes="0" SourcePath="..\PDFStamperBinder\bin\Debug\Stamp_Template\img\master_copy.png" SelfReg="false"/>
+    <ROW File="indoline_controlled_copy.ast" Component_="controlled_copy.ast" FileName="INDOLI~1.AST|indoline_controlled_copy.ast" Attributes="0" SourcePath="..\PDFStamperBinder\bin\Debug\Stamp_Template\indoline_controlled_copy.ast" SelfReg="false"/>
+    <ROW File="indoline_development_copy.ast" Component_="controlled_copy.ast" FileName="INDOLI~2.AST|indoline_development_copy.ast" Attributes="0" SourcePath="..\PDFStamperBinder\bin\Debug\Stamp_Template\indoline_development_copy.ast" SelfReg="false"/>
+    <ROW File="indoline_controlled_copy.png" Component_="indoline_controlled_copy.png" FileName="INDOLI~1.PNG|indoline_controlled_copy.png" Attributes="0" SourcePath="..\PDFStamperBinder\bin\Debug\Stamp_Template\indoline_img\indoline_controlled_copy.png" SelfReg="false"/>
+    <ROW File="indoline_developemnt_copy.png" Component_="indoline_controlled_copy.png" FileName="INDOLI~2.PNG|indoline_developemnt_copy.png" Attributes="0" SourcePath="..\PDFStamperBinder\bin\Debug\Stamp_Template\indoline_img\indoline_developemnt_copy.png" SelfReg="false"/>
+    <ROW File="indoline_master_copy.png" Component_="indoline_controlled_copy.png" FileName="INDOLI~3.PNG|indoline_master_copy.png" Attributes="0" SourcePath="..\PDFStamperBinder\bin\Debug\Stamp_Template\indoline_img\indoline_master_copy.png" SelfReg="false"/>
+    <ROW File="indoline_master_copy.ast" Component_="controlled_copy.ast" FileName="INDOLI~3.AST|indoline_master_copy.ast" Attributes="0" SourcePath="..\PDFStamperBinder\bin\Debug\Stamp_Template\indoline_master_copy.ast" SelfReg="false"/>
+    <ROW File="master_copy.ast" Component_="controlled_copy.ast" FileName="MASTER~1.AST|master_copy.ast" Attributes="0" SourcePath="..\PDFStamperBinder\bin\Debug\Stamp_Template\master_copy.ast" SelfReg="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.AppPathsComponent">
+    <ROW Name="AI_APPPATH_PERBUILD_BouncyCastle.Crypto.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_BouncyCastle.Crypto.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_BouncyCastle.Crypto.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Common.Logging.Core.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Common.Logging.Core.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Common.Logging.Core.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_Common.Logging.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_Common.Logging.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_Common.Logging.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_PDFStamperBinder.exe" Path="[|AI_PROPPATH_DIR_PERBUILD_PDFStamperBinder.exe]\[|AI_PROPPATH_FILENAME_PERBUILD_PDFStamperBinder.exe]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_PDFStamperBinder.exe.config" Path="[|AI_PROPPATH_DIR_PERBUILD_PDFStamperBinder.exe.config]\[|AI_PROPPATH_FILENAME_PERBUILD_PDFStamperBinder.exe.config]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_itext.barcodes.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_itext.barcodes.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_itext.barcodes.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_itext.forms.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_itext.forms.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_itext.forms.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_itext.io.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_itext.io.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_itext.io.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_itext.kernel.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_itext.kernel.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_itext.kernel.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_itext.layout.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_itext.layout.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_itext.layout.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_itext.pdfa.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_itext.pdfa.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_itext.pdfa.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_itext.sign.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_itext.sign.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_itext.sign.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_itext.styledxmlparser.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_itext.styledxmlparser.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_itext.styledxmlparser.dll]" Type="2" Content="0"/>
+    <ROW Name="AI_APPPATH_PERBUILD_itext.svg.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_itext.svg.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_itext.svg.dll]" Type="2" Content="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
+    <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="..\..\..\..\..\Desktop" Languages="en" InstallationType="4" UseLargeSchema="true"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
+    <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
+    <ROW Fragment="FolderDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\FolderDlg.aip"/>
+    <ROW Fragment="MaintenanceTypeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceTypeDlg.aip"/>
+    <ROW Fragment="MaintenanceWelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceWelcomeDlg.aip"/>
+    <ROW Fragment="SequenceDialogs.aip" Path="&lt;AI_THEMES&gt;classic\fragments\SequenceDialogs.aip"/>
+    <ROW Fragment="Sequences.aip" Path="&lt;AI_FRAGS&gt;Sequences.aip"/>
+    <ROW Fragment="StaticUIStrings.aip" Path="&lt;AI_FRAGS&gt;StaticUIStrings.aip"/>
+    <ROW Fragment="UI.aip" Path="&lt;AI_THEMES&gt;classic\fragments\UI.aip"/>
+    <ROW Fragment="Validation.aip" Path="&lt;AI_FRAGS&gt;Validation.aip"/>
+    <ROW Fragment="VerifyRemoveDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRemoveDlg.aip"/>
+    <ROW Fragment="VerifyRepairDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRepairDlg.aip"/>
+    <ROW Fragment="WelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\WelcomeDlg.aip"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="FolderDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="FolderDlg" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="Next" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="99"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_MAINT" Ordering="198"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="202"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="197"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_MAINT" Ordering="101"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="ChangeButton" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="501"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceWelcomeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RemoveButton" Event="NewDialog" Argument="VerifyRemoveDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RepairButton" Event="NewDialog" Argument="VerifyRepairDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="1"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Repair" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="399" Options="1"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Remove" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="299" Options="1"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_PATCH" Ordering="201"/>
+    <ROW Dialog_="ResumeDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_RESUME" Ordering="299"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="199"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="PatchWelcomeDlg" Condition="AI_PATCH" Ordering="203"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCreateFolderComponent">
+    <ROW Directory_="APPDIR" Component_="APPDIR" ManualDelete="true"/>
+    <ROW Directory_="SHORTCUTDIR" Component_="SHORTCUTDIR" ManualDelete="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
+    <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
+    <ROW Action="AI_EnableDebugLog" Type="321" Source="aicustact.dll" Target="EnableDebugLog"/>
+    <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
+    <ROW Action="AI_LaunchApp" Type="1" Source="aicustact.dll" Target="[#PDFStamperBinder.exe]"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
+    <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
+    <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
+    <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
+    <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
+    <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatCompsComponent">
+    <ROW Feature_="MainFeature" Component_="APPDIR"/>
+    <ROW Feature_="MainFeature" Component_="ProductInformation"/>
+    <ROW Feature_="MainFeature" Component_="PDFStamperBinder_PrimaryOutput"/>
+    <ROW Feature_="MainFeature" Component_="SHORTCUTDIR"/>
+    <ROW Feature_="MainFeature" Component_="PDFStamperBinder_References"/>
+    <ROW Feature_="MainFeature" Component_="controlled_copy.ast"/>
+    <ROW Feature_="MainFeature" Component_="controlled_copy.png"/>
+    <ROW Feature_="MainFeature" Component_="indoline_controlled_copy.png"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
+    <ROW Name="logo.exe" SourcePath="..\..\logo\logo.ico" Index="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_STORE_LOCATION" Condition="(Not Installed) OR REINSTALL" Sequence="1501"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1399"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="53"/>
+    <ROW Action="AI_DpiContentScale" Sequence="52"/>
+    <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
+    <ROW Condition="(VersionNT &lt;&gt; 400)" Description="[ProductName] cannot be installed on [WindowsTypeNT40Display]." DescriptionLocId="AI.LaunchCondition.NoNT40" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 500)" Description="[ProductName] cannot be installed on [WindowsTypeNT50Display]." DescriptionLocId="AI.LaunchCondition.NoNT50" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT64 OR ((VersionNT &lt;&gt; 501) OR (ServicePackLevel = 3))) AND ((VersionNT &lt;&gt; 502) OR (ServicePackLevel = 2))" Description="[ProductName] cannot be installed on [WindowsTypeNT5XDisplay]." DescriptionLocId="AI.LaunchCondition.NoNT5X" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]." DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
+    <ROW Registry="Path" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Path" Value="[APPDIR]" Component_="ProductInformation"/>
+    <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
+    <ROW Shortcut="AI_PROPPATH_FILENAME_PERBUILD_PDFSt" Directory_="ProgramMenuFolder" Name="PDFSTA~1.EXE|[|AI_PROPPATH_FILENAME_PERBUILD_PDFStamperBinder.exe]" Component_="PDFStamperBinder_PrimaryOutput" Target="[#PDFStamperBinder.exe]" Hotkey="0" Icon_="logo.exe" IconIndex="0" ShowCmd="1" WkDir="PDFStamperBinder_Dir"/>
+    <ROW Shortcut="PDFStamperBinder" Directory_="SHORTCUTDIR" Name="PDFSTA~1|PDFStamperBinder" Component_="PDFStamperBinder_PrimaryOutput" Target="[#PDFStamperBinder.exe]" Hotkey="0" IconIndex="0" ShowCmd="1"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
+    <ATTRIBUTE name="UsedTheme" value="classic"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="0.0.1" VersionMax="[|ProductVersion]" Attributes="257" ActionProperty="OLDPRODUCTS"/>
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.VsProjectComponent">
+    <ROW ProjectId="{c4013fbf-4357-4580-9e6f-8ef23d5b04e4}" ProjectName="PDFStamperBinder" OutputGroup="PrimaryOutput" OutputFile="PDFStamperBinder.exe" OutputFileShortcut="PDFStamperBinder"/>
+    <ROW ProjectId="{c4013fbf-4357-4580-9e6f-8ef23d5b04e4}" ProjectName="PDFStamperBinder" OutputGroup="PrimaryOutput" OutputFile="PDFStamperBinder.exe.config"/>
+    <ROW ProjectId="{c4013fbf-4357-4580-9e6f-8ef23d5b04e4}" ProjectName="PDFStamperBinder" OutputGroup="References" OutputFile="BouncyCastle.Crypto.dll"/>
+    <ROW ProjectId="{c4013fbf-4357-4580-9e6f-8ef23d5b04e4}" ProjectName="PDFStamperBinder" OutputGroup="References" OutputFile="Common.Logging.Core.dll"/>
+    <ROW ProjectId="{c4013fbf-4357-4580-9e6f-8ef23d5b04e4}" ProjectName="PDFStamperBinder" OutputGroup="References" OutputFile="Common.Logging.dll"/>
+    <ROW ProjectId="{c4013fbf-4357-4580-9e6f-8ef23d5b04e4}" ProjectName="PDFStamperBinder" OutputGroup="References" OutputFile="itext.barcodes.dll"/>
+    <ROW ProjectId="{c4013fbf-4357-4580-9e6f-8ef23d5b04e4}" ProjectName="PDFStamperBinder" OutputGroup="References" OutputFile="itext.forms.dll"/>
+    <ROW ProjectId="{c4013fbf-4357-4580-9e6f-8ef23d5b04e4}" ProjectName="PDFStamperBinder" OutputGroup="References" OutputFile="itext.io.dll"/>
+    <ROW ProjectId="{c4013fbf-4357-4580-9e6f-8ef23d5b04e4}" ProjectName="PDFStamperBinder" OutputGroup="References" OutputFile="itext.kernel.dll"/>
+    <ROW ProjectId="{c4013fbf-4357-4580-9e6f-8ef23d5b04e4}" ProjectName="PDFStamperBinder" OutputGroup="References" OutputFile="itext.layout.dll"/>
+    <ROW ProjectId="{c4013fbf-4357-4580-9e6f-8ef23d5b04e4}" ProjectName="PDFStamperBinder" OutputGroup="References" OutputFile="itext.pdfa.dll"/>
+    <ROW ProjectId="{c4013fbf-4357-4580-9e6f-8ef23d5b04e4}" ProjectName="PDFStamperBinder" OutputGroup="References" OutputFile="itext.sign.dll"/>
+    <ROW ProjectId="{c4013fbf-4357-4580-9e6f-8ef23d5b04e4}" ProjectName="PDFStamperBinder" OutputGroup="References" OutputFile="itext.styledxmlparser.dll"/>
+    <ROW ProjectId="{c4013fbf-4357-4580-9e6f-8ef23d5b04e4}" ProjectName="PDFStamperBinder" OutputGroup="References" OutputFile="itext.svg.dll"/>
+  </COMPONENT>
+</DOCUMENT>
