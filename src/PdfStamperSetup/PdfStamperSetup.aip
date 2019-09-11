@@ -8,8 +8,8 @@
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_BouncyCastle.Crypto.dll" Value="..\packages\Portable.BouncyCastle.1.8.1.3\lib\net40"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_Common.Logging.Core.dll" Value="..\packages\Common.Logging.Core.3.4.1\lib\net40"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_Common.Logging.dll" Value="..\packages\Common.Logging.3.4.1\lib\net40"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_PDFStamperBinder.exe" Value="..\PDFStamperBinder\bin\Debug"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_PDFStamperBinder.exe.config" Value="..\PDFStamperBinder\bin\Debug"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_PDFStamperBinder.exe" Value="..\PDFStamperBinder\bin\Release"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_PDFStamperBinder.exe.config" Value="..\PDFStamperBinder\bin\Release"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_itext.barcodes.dll" Value="..\packages\itext7.7.1.7\lib\net40"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_itext.forms.dll" Value="..\packages\itext7.7.1.7\lib\net40"/>
     <ROW Property="AI_PROPPATH_DIR_PERBUILD_itext.io.dll" Value="..\packages\itext7.7.1.7\lib\net40"/>
@@ -74,9 +74,10 @@
     <ROW Component="PDFStamperBinder_References" ComponentId="{8084AACA-E25C-4872-9AFB-9544165ED5E5}" Directory_="PDFStamperBinder_Dir" Attributes="0" KeyPath="itext.svg.dll"/>
     <ROW Component="ProductInformation" ComponentId="{03E32858-539E-46A8-AAE8-73557762857B}" Directory_="APPDIR" Attributes="4" KeyPath="Version"/>
     <ROW Component="SHORTCUTDIR" ComponentId="{15B5A441-FA10-4B16-98A9-1B015D37DF86}" Directory_="SHORTCUTDIR" Attributes="0"/>
-    <ROW Component="controlled_copy.ast" ComponentId="{BD6DE27F-41DB-4B47-9A93-EF6A9A5E20B6}" Directory_="Stamp_Template_Dir" Attributes="0" KeyPath="controlled_copy.ast" Type="0"/>
-    <ROW Component="controlled_copy.png" ComponentId="{435F3D98-54A2-42BB-B1F0-5C85A3377C5E}" Directory_="img_Dir" Attributes="0" KeyPath="controlled_copy.png" Type="0"/>
-    <ROW Component="indoline_controlled_copy.png" ComponentId="{BEF1B8EF-C402-4546-9E31-3EEA770D4440}" Directory_="indoline_img_Dir" Attributes="0" KeyPath="indoline_controlled_copy.png" Type="0"/>
+    <ROW Component="baseTemplate.ast" ComponentId="{E1DC6624-91FB-4271-AEBD-7B32D1FE6E9C}" Directory_="PDFStamperBinder_Dir" Attributes="0" KeyPath="baseTemplate.ast" Type="0"/>
+    <ROW Component="controlled_copy.ast" ComponentId="{FD9196D3-820C-4BE6-BF80-C0B933C49800}" Directory_="Stamp_Template_Dir" Attributes="0" KeyPath="controlled_copy.ast" Type="0"/>
+    <ROW Component="controlled_copy.png" ComponentId="{8499EF50-745E-4327-BD60-2AFF0BE73595}" Directory_="img_Dir" Attributes="0" KeyPath="controlled_copy.png" Type="0"/>
+    <ROW Component="indoline_controlled_copy.png" ComponentId="{6C812778-35D3-4EC5-81E9-31120D6791D0}" Directory_="indoline_img_Dir" Attributes="0" KeyPath="indoline_controlled_copy.png" Type="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
     <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0"/>
@@ -97,18 +98,19 @@
     <ROW File="itext.sign.dll" Component_="PDFStamperBinder_References" FileName="ITEXTS~2.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_itext.sign.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_itext.sign.dll&gt;" SelfReg="false"/>
     <ROW File="itext.styledxmlparser.dll" Component_="PDFStamperBinder_References" FileName="ITEXTS~3.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_itext.styledxmlparser.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_itext.styledxmlparser.dll&gt;" SelfReg="false"/>
     <ROW File="itext.svg.dll" Component_="PDFStamperBinder_References" FileName="ITEXTS~4.DLL|[|AI_PROPPATH_FILENAME_PERBUILD_itext.svg.dll]" Attributes="0" SourcePath="&lt;AI_APPPATH_PERBUILD_itext.svg.dll&gt;" SelfReg="false"/>
-    <ROW File="controlled_copy.ast" Component_="controlled_copy.ast" FileName="CONTRO~1.AST|controlled_copy.ast" Attributes="0" SourcePath="..\PDFStamperBinder\bin\Debug\Stamp_Template\controlled_copy.ast" SelfReg="false"/>
-    <ROW File="development_copy.ast" Component_="controlled_copy.ast" FileName="DEVELO~1.AST|development_copy.ast" Attributes="0" SourcePath="..\PDFStamperBinder\bin\Debug\Stamp_Template\development_copy.ast" SelfReg="false"/>
-    <ROW File="controlled_copy.png" Component_="controlled_copy.png" FileName="CONTRO~1.PNG|controlled_copy.png" Attributes="0" SourcePath="..\PDFStamperBinder\bin\Debug\Stamp_Template\img\controlled_copy.png" SelfReg="false"/>
-    <ROW File="developemnt_copy.png" Component_="controlled_copy.png" FileName="DEVELO~1.PNG|developemnt_copy.png" Attributes="0" SourcePath="..\PDFStamperBinder\bin\Debug\Stamp_Template\img\developemnt_copy.png" SelfReg="false"/>
-    <ROW File="master_copy.png" Component_="controlled_copy.png" FileName="MASTER~1.PNG|master_copy.png" Attributes="0" SourcePath="..\PDFStamperBinder\bin\Debug\Stamp_Template\img\master_copy.png" SelfReg="false"/>
-    <ROW File="indoline_controlled_copy.ast" Component_="controlled_copy.ast" FileName="INDOLI~1.AST|indoline_controlled_copy.ast" Attributes="0" SourcePath="..\PDFStamperBinder\bin\Debug\Stamp_Template\indoline_controlled_copy.ast" SelfReg="false"/>
-    <ROW File="indoline_development_copy.ast" Component_="controlled_copy.ast" FileName="INDOLI~2.AST|indoline_development_copy.ast" Attributes="0" SourcePath="..\PDFStamperBinder\bin\Debug\Stamp_Template\indoline_development_copy.ast" SelfReg="false"/>
-    <ROW File="indoline_controlled_copy.png" Component_="indoline_controlled_copy.png" FileName="INDOLI~1.PNG|indoline_controlled_copy.png" Attributes="0" SourcePath="..\PDFStamperBinder\bin\Debug\Stamp_Template\indoline_img\indoline_controlled_copy.png" SelfReg="false"/>
-    <ROW File="indoline_developemnt_copy.png" Component_="indoline_controlled_copy.png" FileName="INDOLI~2.PNG|indoline_developemnt_copy.png" Attributes="0" SourcePath="..\PDFStamperBinder\bin\Debug\Stamp_Template\indoline_img\indoline_developemnt_copy.png" SelfReg="false"/>
-    <ROW File="indoline_master_copy.png" Component_="indoline_controlled_copy.png" FileName="INDOLI~3.PNG|indoline_master_copy.png" Attributes="0" SourcePath="..\PDFStamperBinder\bin\Debug\Stamp_Template\indoline_img\indoline_master_copy.png" SelfReg="false"/>
-    <ROW File="indoline_master_copy.ast" Component_="controlled_copy.ast" FileName="INDOLI~3.AST|indoline_master_copy.ast" Attributes="0" SourcePath="..\PDFStamperBinder\bin\Debug\Stamp_Template\indoline_master_copy.ast" SelfReg="false"/>
-    <ROW File="master_copy.ast" Component_="controlled_copy.ast" FileName="MASTER~1.AST|master_copy.ast" Attributes="0" SourcePath="..\PDFStamperBinder\bin\Debug\Stamp_Template\master_copy.ast" SelfReg="false"/>
+    <ROW File="controlled_copy.ast" Component_="controlled_copy.ast" FileName="CONTRO~1.AST|controlled_copy.ast" Attributes="0" SourcePath="..\PDFStamperBinder\Stamp_Template\controlled_copy.ast" SelfReg="false"/>
+    <ROW File="development_copy.ast" Component_="controlled_copy.ast" FileName="DEVELO~1.AST|development_copy.ast" Attributes="0" SourcePath="..\PDFStamperBinder\Stamp_Template\development_copy.ast" SelfReg="false"/>
+    <ROW File="controlled_copy.png" Component_="controlled_copy.png" FileName="CONTRO~1.PNG|controlled_copy.png" Attributes="0" SourcePath="..\PDFStamperBinder\Stamp_Template\img\controlled_copy.png" SelfReg="false"/>
+    <ROW File="developemnt_copy.png" Component_="controlled_copy.png" FileName="DEVELO~1.PNG|developemnt_copy.png" Attributes="0" SourcePath="..\PDFStamperBinder\Stamp_Template\img\developemnt_copy.png" SelfReg="false"/>
+    <ROW File="master_copy.png" Component_="controlled_copy.png" FileName="MASTER~1.PNG|master_copy.png" Attributes="0" SourcePath="..\PDFStamperBinder\Stamp_Template\img\master_copy.png" SelfReg="false"/>
+    <ROW File="indoline_controlled_copy.ast" Component_="controlled_copy.ast" FileName="INDOLI~1.AST|indoline_controlled_copy.ast" Attributes="0" SourcePath="..\PDFStamperBinder\Stamp_Template\indoline_controlled_copy.ast" SelfReg="false"/>
+    <ROW File="indoline_development_copy.ast" Component_="controlled_copy.ast" FileName="INDOLI~2.AST|indoline_development_copy.ast" Attributes="0" SourcePath="..\PDFStamperBinder\Stamp_Template\indoline_development_copy.ast" SelfReg="false"/>
+    <ROW File="indoline_controlled_copy.png" Component_="indoline_controlled_copy.png" FileName="INDOLI~1.PNG|indoline_controlled_copy.png" Attributes="0" SourcePath="..\PDFStamperBinder\Stamp_Template\indoline_img\indoline_controlled_copy.png" SelfReg="false"/>
+    <ROW File="indoline_developemnt_copy.png" Component_="indoline_controlled_copy.png" FileName="INDOLI~2.PNG|indoline_developemnt_copy.png" Attributes="0" SourcePath="..\PDFStamperBinder\Stamp_Template\indoline_img\indoline_developemnt_copy.png" SelfReg="false"/>
+    <ROW File="indoline_master_copy.png" Component_="indoline_controlled_copy.png" FileName="INDOLI~3.PNG|indoline_master_copy.png" Attributes="0" SourcePath="..\PDFStamperBinder\Stamp_Template\indoline_img\indoline_master_copy.png" SelfReg="false"/>
+    <ROW File="indoline_master_copy.ast" Component_="controlled_copy.ast" FileName="INDOLI~3.AST|indoline_master_copy.ast" Attributes="0" SourcePath="..\PDFStamperBinder\Stamp_Template\indoline_master_copy.ast" SelfReg="false"/>
+    <ROW File="master_copy.ast" Component_="controlled_copy.ast" FileName="MASTER~1.AST|master_copy.ast" Attributes="0" SourcePath="..\PDFStamperBinder\Stamp_Template\master_copy.ast" SelfReg="false"/>
+    <ROW File="baseTemplate.ast" Component_="baseTemplate.ast" FileName="BASETE~1.AST|baseTemplate.ast" Attributes="0" SourcePath="..\PDFStamperBinder\baseTemplate.ast" SelfReg="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.AppPathsComponent">
     <ROW Name="AI_APPPATH_PERBUILD_BouncyCastle.Crypto.dll" Path="[|AI_PROPPATH_DIR_PERBUILD_BouncyCastle.Crypto.dll]\[|AI_PROPPATH_FILENAME_PERBUILD_BouncyCastle.Crypto.dll]" Type="2" Content="0"/>
@@ -151,6 +153,7 @@
     <ROW Fragment="WelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\WelcomeDlg.aip"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="ShortcutFlags.dll" SourcePath="&lt;AI_CUSTACTS&gt;ShortcutFlags.dll"/>
     <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
@@ -182,16 +185,24 @@
     <ROW Directory_="SHORTCUTDIR" Component_="SHORTCUTDIR" ManualDelete="false"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_ApplyShortcutFlags" Type="3073" Source="ShortcutFlags.dll" Target="UpdateShortcutFlags" WithoutSeq="true"/>
     <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
     <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
     <ROW Action="AI_EnableDebugLog" Type="321" Source="aicustact.dll" Target="EnableDebugLog"/>
     <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
     <ROW Action="AI_LaunchApp" Type="1" Source="aicustact.dll" Target="[#PDFStamperBinder.exe]"/>
     <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
+    <ROW Action="AI_PinShortcuts" Type="1" Source="ShortcutFlags.dll" Target="PinShortcuts"/>
+    <ROW Action="AI_PinToStartScreen" Type="1025" Source="ShortcutFlags.dll" Target="PinToStartScreen" WithoutSeq="true"/>
+    <ROW Action="AI_PinToTaskbar" Type="1025" Source="ShortcutFlags.dll" Target="PinToTaskbar" WithoutSeq="true"/>
+    <ROW Action="AI_PrepareShortcutFlags" Type="1" Source="ShortcutFlags.dll" Target="PrepareActionData"/>
     <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
     <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
     <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
     <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="AI_UnpinFromStartScreen" Type="1025" Source="ShortcutFlags.dll" Target="UnpinFromStartScreen" WithoutSeq="true"/>
+    <ROW Action="AI_UnpinFromTaskbar" Type="1025" Source="ShortcutFlags.dll" Target="UnpinFromTaskbar" WithoutSeq="true"/>
+    <ROW Action="AI_UnpinShortcuts" Type="1" Source="ShortcutFlags.dll" Target="UnpinShortcuts"/>
     <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]"/>
     <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]"/>
     <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
@@ -205,6 +216,7 @@
     <ROW Feature_="MainFeature" Component_="controlled_copy.ast"/>
     <ROW Feature_="MainFeature" Component_="controlled_copy.png"/>
     <ROW Feature_="MainFeature" Component_="indoline_controlled_copy.png"/>
+    <ROW Feature_="MainFeature" Component_="baseTemplate.ast"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
     <ROW Name="logo.exe" SourcePath="..\..\logo\logo.ico" Index="0"/>
@@ -216,6 +228,9 @@
     <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1399"/>
     <ROW Action="AI_ResolveKnownFolders" Sequence="52"/>
     <ROW Action="AI_EnableDebugLog" Sequence="51"/>
+    <ROW Action="AI_PrepareShortcutFlags" Condition="(VersionNT &gt; 501) AND ((NOT Installed) OR (Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;)))" Sequence="4501"/>
+    <ROW Action="AI_PinShortcuts" Condition="(VersionNT &gt; 600) AND ((NOT Installed) OR (Installed AND (REMOVE&lt;&gt;&quot;ALL&quot;) AND (AI_INSTALL_MODE&lt;&gt;&quot;Remove&quot;)))" Sequence="6499"/>
+    <ROW Action="AI_UnpinShortcuts" Condition="(VersionNT &gt; 600) AND (REMOVE = &quot;ALL&quot;)" Sequence="3199"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
     <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
@@ -234,7 +249,7 @@
     <ROW Registry="Version" Root="-1" Key="Software\[Manufacturer]\[ProductName]" Name="Version" Value="[ProductVersion]" Component_="ProductInformation"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiShortsComponent">
-    <ROW Shortcut="AI_PROPPATH_FILENAME_PERBUILD_PDFSt" Directory_="ProgramMenuFolder" Name="PDFSTA~1.EXE|[|AI_PROPPATH_FILENAME_PERBUILD_PDFStamperBinder.exe]" Component_="PDFStamperBinder_PrimaryOutput" Target="[#PDFStamperBinder.exe]" Hotkey="0" Icon_="logo.exe" IconIndex="0" ShowCmd="1" WkDir="PDFStamperBinder_Dir"/>
+    <ROW Shortcut="AI_PROPPATH_FILENAME_PERBUILD_PDFSt" Directory_="ProgramMenuFolder" Name="PDFSTA~1|PDF Stamper &amp;  Binder" Component_="PDFStamperBinder_PrimaryOutput" Target="[#PDFStamperBinder.exe]" Hotkey="0" Icon_="logo.exe" IconIndex="0" ShowCmd="1" WkDir="PDFStamperBinder_Dir" CustomFlags="1"/>
     <ROW Shortcut="PDFStamperBinder" Directory_="SHORTCUTDIR" Name="PDFSTA~1|PDFStamperBinder" Component_="PDFStamperBinder_PrimaryOutput" Target="[#PDFStamperBinder.exe]" Hotkey="0" IconIndex="0" ShowCmd="1"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
@@ -245,7 +260,7 @@
     <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.VsProjectComponent">
-    <ROW ProjectId="{c4013fbf-4357-4580-9e6f-8ef23d5b04e4}" ProjectName="PDFStamperBinder" OutputGroup="PrimaryOutput" OutputFile="PDFStamperBinder.exe" OutputFileShortcut="PDFStamperBinder"/>
+    <ROW ProjectId="{c4013fbf-4357-4580-9e6f-8ef23d5b04e4}" ProjectName="PDFStamperBinder" OutputGroup="PrimaryOutput" OutputFile="PDFStamperBinder.exe" OutputFileShortcut="AI_PROPPATH_FILENAME_PERBUILD_PDFSt"/>
     <ROW ProjectId="{c4013fbf-4357-4580-9e6f-8ef23d5b04e4}" ProjectName="PDFStamperBinder" OutputGroup="PrimaryOutput" OutputFile="PDFStamperBinder.exe.config"/>
     <ROW ProjectId="{c4013fbf-4357-4580-9e6f-8ef23d5b04e4}" ProjectName="PDFStamperBinder" OutputGroup="References" OutputFile="BouncyCastle.Crypto.dll"/>
     <ROW ProjectId="{c4013fbf-4357-4580-9e6f-8ef23d5b04e4}" ProjectName="PDFStamperBinder" OutputGroup="References" OutputFile="Common.Logging.Core.dll"/>
